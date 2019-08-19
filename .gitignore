@@ -10,8 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
-# Never ignore Asset meta data
-!/[Aa]ssets/**/*.meta
+
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -413,3 +412,6 @@ MigrationBackup/
 
 App/
 UWP/
+
+# Never ignore Asset meta data
+!/[Aa]ssets/**/*.meta
