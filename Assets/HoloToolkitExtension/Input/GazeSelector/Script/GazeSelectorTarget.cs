@@ -29,11 +29,8 @@ namespace HoloToolkitExtension.Input
         private void OnSelectionComplete()
         {
             //ここにゲージがいっぱいになったら実行される処理を書く。
-            //SelectionRadial.Instance.OnSelectionComplete -= OnSelectionComplete;
-            //OnSelectionCompleted.Invoke();
-
-            //ゲージがいっぱいになったら青に変更
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            SelectionRadial.Instance.OnSelectionComplete -= OnSelectionComplete;
+            OnSelectionCompleted.Invoke();
         }
     }
 
