@@ -274,8 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea44e905e90fbfa4db4b0ff92bd3dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnterMarkPrefab: {fileID: 6750976618778815103, guid: 1846c524e7fda8a49b10badcd6b32951,
-    type: 3}
 --- !u!114 &106114865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 114000012009196210, guid: 3eddd1c29199313478dd3f912bfab2ab,
         type: 3}
       propertyPath: MaxGazeCollisionDistance
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 3}
@@ -618,8 +616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea44e905e90fbfa4db4b0ff92bd3dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnterMarkPrefab: {fileID: 6750976618778815103, guid: 1846c524e7fda8a49b10badcd6b32951,
-    type: 3}
 --- !u!1001 &556206921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,8 +669,9 @@ GameObject:
   - component: {fileID: 592726619}
   - component: {fileID: 592726618}
   - component: {fileID: 592726617}
+  - component: {fileID: 592726621}
   m_Layer: 0
-  m_Name: focusRange
+  m_Name: ViewingAngle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +707,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50d77e84af4c4b543ad50f32a6aa89d2, type: 2}
+  - {fileID: 2100000, guid: 89e9d292390595740a2bd0ecef4ea4dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -752,6 +749,18 @@ Transform:
   m_Father: {fileID: 2004688709}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592726621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592726616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fa4194b60765d43a9033cc0d718f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1505747637
 PrefabInstance:
   m_ObjectHideFlags: 0
