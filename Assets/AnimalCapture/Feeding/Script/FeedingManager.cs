@@ -16,6 +16,14 @@ public class FeedingManager : MonoBehaviour
     //手持ちの餌を格納するためのリスト
     private List<GameObject> NumberOfFeedding;
 
+    //
+    enum feeding {
+        Acorn,          //どんぐり( リス用 )
+        Pike,           //秋刀魚( ネコ用 )
+        Carrot,         //人参( ウサギ用 )
+        Meat            //肉( ライオン用 )
+    }
+
     /// <summary>
     /// 手持ちの餌をランダムに決定する
     /// </summary>
