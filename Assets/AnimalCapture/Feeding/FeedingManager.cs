@@ -9,7 +9,20 @@ public class FeedingManager : MonoBehaviour
     //餌オブジェクトのプレハブ
     [SerializeField] private GameObject feedPrefab;
     //餌を射出するときのスピード
-    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float speed = 300.0f;
+    //オブジェクトを破壊するまでにかかる時間
+    [SerializeField] private float DestryTime = 20.0f;
+
+    //手持ちの餌を格納するためのリスト
+    private List<GameObject> NumberOfFeedding;
+
+    /// <summary>
+    /// 手持ちの餌をランダムに決定する
+    /// </summary>
+    private void Start()
+    {
+        
+    }
 
     /// <summary>
     /// 自身(動物オブジェクト)が注視されたら,
@@ -17,8 +30,18 @@ public class FeedingManager : MonoBehaviour
     /// (カメラが餌を投げる指示を出すのではなく, 動物オブジェクト自身から餌を投げるようにしている)
     /// </summary>
     public void Feeing() {
-        var feedInstance = Instantiate<GameObject>(feedPrefab, camera.transform.position, camera.transform.rotation);
+        GameObject feedInstance = Instantiate<GameObject>(feedPrefab, camera.transform.position, camera.transform.rotation);
         feedInstance.GetComponent<Rigidbody>().AddForce(feedInstance.transform.forward * speed);
-        Destroy(feedInstance, 5f);
+
+        //一定時間フィールド上に存在する餌オブジェクトは削除するようにする.
+        Destroy(feedInstance, DestryTime);  
+    }
+
+
+    /// <summary>
+    /// プレーヤーが持っている餌の数を返すだけのプロパティ
+    /// </summary>
+    public int GetNumberOfFeeding{
+        get { return NumberOfFeedding.Count; }
     }
 }
