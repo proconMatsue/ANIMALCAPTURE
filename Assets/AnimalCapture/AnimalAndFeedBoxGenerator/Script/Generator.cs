@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum feeding
+{
+    Acorn,          //どんぐり( リス用 )
+    Pike,           //秋刀魚( ネコ用 )
+    Carrot,         //人参( ウサギ用 )
+    Meat            //肉( ライオン用 )
+};
+
 public class Generator : MonoBehaviour
 {
     public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
@@ -44,5 +52,14 @@ public class Generator : MonoBehaviour
     {
         Instantiate(animalObject[num], new Vector3( UnityEngine.Random.Range(0,fieldPozX),
          UnityEngine.Random.Range(0, fieldPozY),fieldPozZ),Quaternion.identity);//xy座標はランダムで生成
+    }
+
+    public GameObject GenerateRandamFeeding() {
+        GameObject gameObject;
+        feeding feed;
+
+        feed = (feeding)Random.Range((int)feeding.Acorn, (int)feeding.Meat+1);
+
+        return this.gameObject;
     }
 }
