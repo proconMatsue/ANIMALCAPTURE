@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Animal_temp : MonoBehaviour
 {
+    [SerializeField] private GameObject cameraPrefab;
+
+    /// <summary>
+    /// プレーヤーを見続ける
+    /// </summary>
+    /*private void Update()
+    {
+        //this.transform.LookAt(cameraPrefab.transform);
+    }*/
+
     /// <summary>
     /// 餌と動物が触れたら消滅させる
     /// </summary>
@@ -11,7 +21,17 @@ public class Animal_temp : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision.gameObject.tag : " + collision.gameObject.tag);
-        if(collision.gameObject.tag == "feed")
+        var mytag = this.gameObject.tag;
+        var colltag = collision.gameObject.tag;
+
+        if (
+            (mytag == "cat" && colltag == "pike") ||
+            (mytag == "squirrel" && colltag == "acorn") || 
+            (mytag == "lion" && colltag == "meat") ||
+            (mytag == "" && colltag == "meat")
+            )
+        {
             Destroy(collision.gameObject);
+        }
     }
 }

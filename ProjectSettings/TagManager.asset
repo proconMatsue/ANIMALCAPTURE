@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - feed
+  - cat
+  - squirrel
+  - carrot
+  - acorn
+  - meat
+  - pike
   layers:
   - Default
   - TransparentFX
