@@ -543,8 +543,9 @@ PlayerSettings:
   platformCapabilities:
     WindowsStoreApps:
       HumanInterfaceDevice: False
-      InternetClientServer: True
-      PrivateNetworkClientServer: True
+      InternetClient: False
+      InternetClientServer: False
+      PrivateNetworkClientServer: False
       SpatialPerception: True
   metroTargetDeviceFamilies: {}
   metroFTAName: 
