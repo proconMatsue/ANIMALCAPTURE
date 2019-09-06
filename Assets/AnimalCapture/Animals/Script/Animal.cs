@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Animal : MonoBehaviour
-{
+{ 
+    //プレーヤのオブジェクト
     [SerializeField] private GameObject cameraPrefab;
+
+    /// <summary>
+    /// 動物を動かすための関数
+    /// </summary>
+    private void Move()
+    {
+
+    }
 
     /// <summary>
     /// 餌と動物が触れたら消滅させる

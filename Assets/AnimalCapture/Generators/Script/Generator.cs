@@ -5,19 +5,23 @@ using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine.UI;
 
-enum feeding
-{
-    Acorn,          //どんぐり( リス用 )
-    Pike,           //秋刀魚( ネコ用 )
-    Carrot,         //人参( ウサギ用 )
-    Meat,           //肉( ライオン用 )
-    Unexpect        //想定外の値   
-};
-
 public class Generator : MonoBehaviour
 {
+    //餌に対する列挙型
+    private enum Feeding
+    {
+        Acorn,          //どんぐり( リス用 )
+        Pike,           //秋刀魚( ネコ用 )
+        Carrot,         //人参( ウサギ用 )
+        Meat,           //肉( ライオン用 )
+        Unexpect = 0xff //想定外の値   
+    };
+
+    //餌Boxのオブジェクト
     [SerializeField] private GameObject feedBoxPrefab;
+    //プレーヤのオブジェクト
     [SerializeField] private GameObject cameraPrefab;
+    
     //餌の種類
     [SerializeField] public GameObject AornPrefab;
     [SerializeField] public GameObject PikePrefab;
@@ -27,20 +31,19 @@ public class Generator : MonoBehaviour
     [SerializeField] private GameObject textObject;
 
     //餌を射出するときのスピード
-    [SerializeField] private float speed = 300.0f;
+    [SerializeField] private readonly float speed = 300.0f;
     //餌オブジェクトを破壊するまでにかかる時間
-    [SerializeField] private float DestryTime = 20.0f;
+    [SerializeField] private readonly float DestryTime = 20.0f;
 
     //所持できる餌の数の上限
-    [SerializeField] private int MaxNumberFeed = 5;
-    
+    [SerializeField] private readonly int MaxNumberFeed = 5;
+
     public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
     public GameObject[] foodBoxObject;//生成する餌Boxオブジェクトを格納する配列
     public GameObject[] effectObject;//生成するエフェクトオブジェクトを格納する配列
 
-    //所持している餌
-    //private List<GameObject> InventoryFeed = new List<GameObject>();
-    private Dictionary<feeding, int> FeedDictionary = new Dictionary<feeding, int>();
+    //所持している餌の数(key: 餌の種類, value: 餌の数)
+    private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
     public float intervalTime;//生成間隔のインターバルタイム設定用関数
 
@@ -57,10 +60,10 @@ public class Generator : MonoBehaviour
     private void Init()
     {
         //所有している餌を初期化
-        FeedDictionary.Add(feeding.Acorn, 0);
-        FeedDictionary.Add(feeding.Carrot, 0);
-        FeedDictionary.Add(feeding.Meat, 0);
-        FeedDictionary.Add(feeding.Pike, 0);
+        FeedDictionary.Add(Feeding.Acorn, 0);
+        FeedDictionary.Add(Feeding.Carrot, 0);
+        FeedDictionary.Add(Feeding.Meat, 0);
+        FeedDictionary.Add(Feeding.Pike, 0);
     }
 
     /// <summary>
@@ -69,30 +72,26 @@ public class Generator : MonoBehaviour
     private void Start()
     {
         Init();
-        feeding feedingType;
+
+        //最初に持っている餌を取得
+        Feeding feedingType;
         for (int i = 0; i < MaxNumberFeed; i++)
         {
             feedingType = GenerateRandamFeeding();
             FeedDictionary[feedingType]++;
-            /*feed = GenerateRandamFeeding();
-            Debug.Log("feed\n" + feed);
-            InventoryFeed.Add(feed);*/
-        }
-        for(feeding i = 0; (int)i < 4; i++)
-        {
-            Debug.Log("feeding : " + i + "\n" + "FeedDictionary : " + FeedDictionary[i]);
         }
     }
 
     /// <summary>
     /// 左下のUI部に所持している餌を表示するための関数
+    /// 要移動
     /// </summary>
     private void Update()
     {
         // オブジェクトからTextコンポーネントを取得
         Text text = textObject.GetComponent<Text>();
-        text.text = "どんぐり : " + FeedDictionary[feeding.Acorn] + " " + "さんま : " + FeedDictionary[feeding.Pike] + " \n"
-                + "ニンジン : " + FeedDictionary[feeding.Carrot] + " " + "肉 : " + FeedDictionary[feeding.Meat] + " ";
+        text.text = "どんぐり : " + FeedDictionary[Feeding.Acorn] + " " + "さんま : " + FeedDictionary[Feeding.Pike] + " \n"
+                + "ニンジン : " + FeedDictionary[Feeding.Carrot] + " " + "肉 : " + FeedDictionary[Feeding.Meat] + " ";
     }
 
     public int CheckFieldObject(string objecttag)//フィールド場の指定したオブジェクトの数を返す関数
@@ -106,17 +105,23 @@ public class Generator : MonoBehaviour
 
     public void GenerateAnimal(int num)//実際に動物を生成する関数 引数でanimalObjectの場所を指定
     {
-        Instantiate(animalObject[num], new Vector3( UnityEngine.Random.Range(0,fieldPozX),
-        UnityEngine.Random.Range(0, fieldPozY),fieldPozZ),Quaternion.identity);//xy座標はランダムで生成
+        Instantiate(
+            animalObject[num], 
+            new Vector3( 
+                UnityEngine.Random.Range(0,fieldPozX),
+                UnityEngine.Random.Range(0, fieldPozY),
+                fieldPozZ),
+            Quaternion.identity
+        );//xy座標はランダムで生成
     }
 
     /// <summary>
     /// ランダムに餌を出現させる
     /// </summary>
     /// <returns>ランダムな餌を一つ返す</returns>
-    private feeding GenerateRandamFeeding()
+    private Feeding GenerateRandamFeeding()
     {
-        feeding feed = (feeding)Random.Range((int)feeding.Acorn, (int)feeding.Meat);
+        Feeding feed = (Feeding)Random.Range((int)Feeding.Acorn, (int)Feeding.Meat);
         return feed;
     }
 
@@ -127,12 +132,12 @@ public class Generator : MonoBehaviour
     /// </summary>
     public void Feeing()
     {
-        feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
+        Feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
         Debug.Log("animalFeed : " + animalFeed);
 
         if (FeedDictionary[animalFeed] <= 0)
         {
-
+            //餌を持ってかったときの処理を書く
         }
         else
         {
@@ -153,15 +158,15 @@ public class Generator : MonoBehaviour
     /// </summary>
     /// <param name="feed"> 餌を表す列挙型 </param>
     /// <returns> 引数で受け取った餌に対応する餌ゲームオブジェクト </returns>
-    private GameObject FeedTable(feeding feed)
+    private GameObject FeedTable(Feeding feed)
     {
         switch (feed)
         {
-            case feeding.Acorn: return AornPrefab;
-            case feeding.Carrot: return CarrotPrefab;
-            case feeding.Meat: return MeatPrefab;
-            case feeding.Pike: return PikePrefab;
-            default: Debug.Log("unexpected return."); return null;
+            case Feeding.Acorn: return AornPrefab;
+            case Feeding.Carrot: return CarrotPrefab;
+            case Feeding.Meat: return MeatPrefab;
+            case Feeding.Pike: return PikePrefab;
+            default: Debug.LogWarning("unexpected return."); return null;
         }
     }
 
@@ -170,31 +175,15 @@ public class Generator : MonoBehaviour
     /// </summary>
     /// <param name="animal"> フォーカスを当てている動物のオブジェクト </param>
     /// <returns> 動物に対応する列挙型の餌を返す </returns>
-    private feeding AnimalTable(GameObject animal)
+    private Feeding AnimalTable(GameObject animal)
     {
         switch (animal.gameObject.tag)
         {
-            case "rabbit": return feeding.Carrot;
-            case "cat": return feeding.Pike;
-            case "squirrel": return feeding.Acorn;
-            case "lion": return feeding.Meat;
-            default: Debug.Log("unexpected return."); return feeding.Unexpect;
-        }
-    }
-    /// <summary>
-    /// 即席に作成した餌の所持を表すために使用する関数
-    /// </summary>
-    /// <param name="num"> 餌を示す番号 </param>
-    /// <returns> 対応する餌の数を返す </returns>
-    public int HoldFeedNum(int num)
-    {
-        switch (num)
-        {
-            case 0: return FeedDictionary[feeding.Acorn];
-            case 1: return FeedDictionary[feeding.Pike];
-            case 2: return FeedDictionary[feeding.Carrot];
-            case 3: return FeedDictionary[feeding.Meat];
-            default: Debug.Log("unexpeted return."); return 0xff;
+            case "rabbit": return Feeding.Carrot;
+            case "cat": return Feeding.Pike;
+            case "squirrel": return Feeding.Acorn;
+            case "lion": return Feeding.Meat;
+            default: Debug.LogWarning("unexpected return."); return Feeding.Unexpect;
         }
     }
 }
