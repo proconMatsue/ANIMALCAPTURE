@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f6c13bb14ef974092cdcdcaf97969b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squirrelPrefab_normal: {fileID: 3759546395461341439, guid: 0220eca12ec7b224f825f839c281b311,
+  squirrelPrefab_normal: {fileID: 380027751529315141, guid: e3f95419e980e19428ba41c54734fc29,
     type: 3}
   catPrefab_normal: {fileID: 1837058609358483791, guid: 04b7580af0c329444a669fd1ebd65217,
     type: 3}

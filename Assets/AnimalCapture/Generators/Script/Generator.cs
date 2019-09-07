@@ -121,7 +121,7 @@ public class Generator : MonoBehaviour
     /// <returns>ランダムな餌を一つ返す</returns>
     private Feeding GenerateRandamFeeding()
     {
-        Feeding feed = (Feeding)Random.Range((int)Feeding.Acorn, (int)Feeding.Meat);
+        Feeding feed = (Feeding)Random.Range((int)Feeding.Acorn, (int)Feeding.Meat+1);
         return feed;
     }
 
