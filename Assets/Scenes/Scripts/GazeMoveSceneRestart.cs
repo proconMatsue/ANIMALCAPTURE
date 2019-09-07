@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 namespace HoloToolkitExtension.Input
 {
 
-    public class GazeMoveScene : MonoBehaviour, IFocusable
+    public class GazeMoveSceneRestart : MonoBehaviour, IFocusable
     {
 
         public UnityEvent OnSelectionCompleted = new UnityEvent();
@@ -36,8 +36,8 @@ namespace HoloToolkitExtension.Input
             //SelectionRadial.Instance.OnSelectionComplete -= OnSelectionComplete;
             //OnSelectionCompleted.Invoke();
 
-            //ゲージがいっぱいになったら青に変更
-            SceneManager.LoadScene("game");
+            //画面の遷移
+            SceneManager.LoadScene("start");
         }
     }
 
