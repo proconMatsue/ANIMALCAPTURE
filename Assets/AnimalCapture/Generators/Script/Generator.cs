@@ -135,14 +135,20 @@ public class Generator : MonoBehaviour
         Feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
         Debug.Log("animalFeed : " + animalFeed);
 
+        //餌を持ってかったときの処理を書く
         if (FeedDictionary[animalFeed] <= 0)
         {
-            //餌を持ってかったときの処理を書く
+            
         }
         else
         {
+            GameObject g = FeedTable(animalFeed);
+            Debug.Log("FeedTable : " + g.tag);
+
             GameObject feedInstance = Instantiate<GameObject>(
                 FeedTable(animalFeed), cameraPrefab.transform.position, cameraPrefab.transform.rotation);
+            
+
             //投げるゲームオブジェクトはリスとから消しておく
             FeedDictionary[animalFeed]--;
 
