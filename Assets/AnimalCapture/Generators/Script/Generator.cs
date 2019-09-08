@@ -58,6 +58,8 @@ public class Generator : MonoBehaviour
     /// </summary>
     private void Init()
     {
+
+
         //所有している餌を初期化
         FeedDictionary.Add(Feeding.Acorn, 0);
         FeedDictionary.Add(Feeding.Carrot, 0);
