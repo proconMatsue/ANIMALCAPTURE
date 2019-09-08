@@ -158,65 +158,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 3}
---- !u!1 &290185844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 290185846}
-  - component: {fileID: 290185845}
-  m_Layer: 0
-  m_Name: GeneratorManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &290185845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290185844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263be45bcd2db45a69bfe91011d50b4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedBoxPrefab: {fileID: 3215118852415182754, guid: f3ca78e85c2fba34a9f6d24afd772ea9,
-    type: 3}
-  cameraPrefab: {fileID: 1403846987}
-  AornPrefab: {fileID: 1102608075429461677, guid: 8f2ce388a83d31e42af261905d6ded8a,
-    type: 3}
-  PikePrefab: {fileID: 6671044442422536719, guid: 8b0f0b26c2dc091489a285c632524dea,
-    type: 3}
-  CarrotPrefab: {fileID: 2804313564926022978, guid: 454fd938d80d6fd4880ee0cb8118fd8a,
-    type: 3}
-  MeatPrefab: {fileID: 7041291692828704211, guid: 3608ccafb89740442a0c56dd68eb6db6,
-    type: 3}
-  textObject: {fileID: 4186107895341604693, guid: 952133079d0d472419338c5784c979a2,
-    type: 3}
-  speed: 300
-  DestryTime: 20
-  MaxNumberFeed: 5
---- !u!4 &290185846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290185844}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 210.4725, y: 143.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817139400 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3889536201753022074, guid: 1bca2869d459c74489d0f29f59523657,
@@ -518,6 +459,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 988435693708461008, guid: 37cac44ed6d072944ad9eca3856ef29e,
+        type: 3}
+      propertyPath: m_Name
+      value: GeneratorManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 988435693708461008, guid: 37cac44ed6d072944ad9eca3856ef29e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 988435693708461023, guid: 37cac44ed6d072944ad9eca3856ef29e,
         type: 3}
       propertyPath: cameraPrefab
@@ -527,16 +478,6 @@ PrefabInstance:
         type: 3}
       propertyPath: DestryTime
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 988435693708461008, guid: 37cac44ed6d072944ad9eca3856ef29e,
-        type: 3}
-      propertyPath: m_Name
-      value: GeneratorManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 988435693708461008, guid: 37cac44ed6d072944ad9eca3856ef29e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 988435693708461022, guid: 37cac44ed6d072944ad9eca3856ef29e,
         type: 3}

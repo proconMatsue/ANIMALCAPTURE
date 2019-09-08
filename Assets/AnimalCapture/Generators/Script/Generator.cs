@@ -13,8 +13,7 @@ public class Generator : MonoBehaviour
         Acorn,          //どんぐり( リス用 )
         Pike,           //秋刀魚( ネコ用 )
         Carrot,         //人参( ウサギ用 )
-        Meat,           //肉( ライオン用 )
-        Unexpect = 0xff //想定外の値   
+        Meat           //肉( ライオン用 ) 
     };
 
     //餌Boxのオブジェクト
@@ -36,14 +35,14 @@ public class Generator : MonoBehaviour
     [SerializeField] private float DestryTime = 20.0f;
 
     //所持できる餌の数の上限
-    [SerializeField] private int MaxNumberFeed = 5;
+    [SerializeField] private int MaxNumberFeed = 4;
 
     /*public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
     public GameObject[] foodBoxObject;//生成する餌Boxオブジェクトを格納する配列
     public GameObject[] effectObject;//生成するエフェクトオブジェクトを格納する配列*/
 
     //所持している餌の数(key: 餌の種類, value: 餌の数)
-    private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
+    [SerializeField] private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
     /*public float intervalTime;//生成間隔のインターバルタイム設定用関数
 
@@ -135,8 +134,8 @@ public class Generator : MonoBehaviour
         Feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
         Debug.Log("animalFeed : " + animalFeed);
 
-        Debug.Log("FeedDictionary[animalFeed] : " + FeedDictionary[animalFeed]);
-
+        Debug_FeedingDictionary();
+            
         //餌を持ってかったときの処理を書く
         if (FeedDictionary[animalFeed] <= 0)
         {
@@ -187,11 +186,21 @@ public class Generator : MonoBehaviour
     {
         switch (animal.gameObject.tag)
         {
-            case "rabbit": return Feeding.Carrot;
-            case "cat": return Feeding.Pike;
-            case "squirrel": return Feeding.Acorn;
-            case "lion": return Feeding.Meat;
-            default: Debug.LogWarning("unexpected return."); return Feeding.Unexpect;
+            case "rabbit": Debug.Log(Feeding.Carrot); return Feeding.Carrot;
+            case "cat": Debug.Log(Feeding.Pike);  return Feeding.Pike;
+            case "squirrel": Debug.Log(Feeding.Acorn); return Feeding.Acorn;
+            case "lion": Debug.Log(Feeding.Meat); return Feeding.Meat;
+            default: Debug.LogWarning("unexpected return."); return (Feeding)5;
+        }
+    }
+
+    private void Debug_FeedingDictionary()
+    {
+        for(Feeding i = Feeding.Acorn; i <= Feeding.Meat; i++)
+        {
+            Debug.Log("aaaaa");
+            Debug.Log("FeedDictionary : " + FeedDictionary);
+            Debug.Log(i + " : " + FeedDictionary[i]);
         }
     }
 }
