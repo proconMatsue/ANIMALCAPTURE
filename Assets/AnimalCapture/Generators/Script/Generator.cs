@@ -31,28 +31,28 @@ public class Generator : MonoBehaviour
     [SerializeField] private GameObject textObject;
 
     //餌を射出するときのスピード
-    [SerializeField] private readonly float speed = 300.0f;
+    [SerializeField] private float speed = 300.0f;
     //餌オブジェクトを破壊するまでにかかる時間
-    [SerializeField] private readonly float DestryTime = 20.0f;
+    [SerializeField] private float DestryTime = 20.0f;
 
     //所持できる餌の数の上限
-    [SerializeField] private readonly int MaxNumberFeed = 5;
+    [SerializeField] private int MaxNumberFeed = 5;
 
-    public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
+    /*public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
     public GameObject[] foodBoxObject;//生成する餌Boxオブジェクトを格納する配列
-    public GameObject[] effectObject;//生成するエフェクトオブジェクトを格納する配列
+    public GameObject[] effectObject;//生成するエフェクトオブジェクトを格納する配列*/
 
     //所持している餌の数(key: 餌の種類, value: 餌の数)
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
-    public float intervalTime;//生成間隔のインターバルタイム設定用関数
+    /*public float intervalTime;//生成間隔のインターバルタイム設定用関数
 
     public int fieldAnimalLimit;
     public int fieldFoodLimit;
 
     public float fieldPozX;//フィールドの座標範囲
     public float fieldPozY;
-    public float fieldPozZ;
+    public float fieldPozZ;*/
 
     /// <summary>
     /// 初期化を行う関数
@@ -103,7 +103,7 @@ public class Generator : MonoBehaviour
     }
 
 
-    public void GenerateAnimal(int num)//実際に動物を生成する関数 引数でanimalObjectの場所を指定
+    /*public void GenerateAnimal(int num)//実際に動物を生成する関数 引数でanimalObjectの場所を指定
     {
         Instantiate(
             animalObject[num], 
@@ -113,7 +113,7 @@ public class Generator : MonoBehaviour
                 fieldPozZ),
             Quaternion.identity
         );//xy座標はランダムで生成
-    }
+    }*/
 
     /// <summary>
     /// ランダムに餌を出現させる
@@ -134,6 +134,8 @@ public class Generator : MonoBehaviour
     {
         Feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
         Debug.Log("animalFeed : " + animalFeed);
+
+        Debug.Log("FeedDictionary[animalFeed] : " + FeedDictionary[animalFeed]);
 
         //餌を持ってかったときの処理を書く
         if (FeedDictionary[animalFeed] <= 0)
