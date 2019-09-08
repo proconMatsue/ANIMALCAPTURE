@@ -283,7 +283,7 @@ MonoBehaviour:
   OnSelectionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1305812167}
+      - m_Target: {fileID: 1305812170}
         m_MethodName: Feeing
         m_Mode: 1
         m_Arguments:
@@ -408,7 +408,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1305812168}
-  - component: {fileID: 1305812167}
+  - component: {fileID: 1305812170}
+  - component: {fileID: 1305812169}
   m_Layer: 0
   m_Name: GeneratorManager
   m_TagString: Untagged
@@ -416,33 +417,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1305812167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305812166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263be45bcd2db45a69bfe91011d50b4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedBoxPrefab: {fileID: 3215118852415182754, guid: f3ca78e85c2fba34a9f6d24afd772ea9,
-    type: 3}
-  cameraPrefab: {fileID: 1403846987}
-  AornPrefab: {fileID: 1102608075429461677, guid: 8f2ce388a83d31e42af261905d6ded8a,
-    type: 3}
-  PikePrefab: {fileID: 6671044442422536719, guid: 8b0f0b26c2dc091489a285c632524dea,
-    type: 3}
-  CarrotPrefab: {fileID: 2804313564926022978, guid: 454fd938d80d6fd4880ee0cb8118fd8a,
-    type: 3}
-  MeatPrefab: {fileID: 7041291692828704211, guid: 3608ccafb89740442a0c56dd68eb6db6,
-    type: 3}
-  textObject: {fileID: 1828560940}
-  speed: 500
-  DestryTime: 5
-  MaxNumberFeed: 4
 --- !u!4 &1305812168
 Transform:
   m_ObjectHideFlags: 0
@@ -458,6 +432,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305812169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305812166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e17ba18a5ddf242b791538860af397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedBoxPrefab: {fileID: 3215118852415182754, guid: f3ca78e85c2fba34a9f6d24afd772ea9,
+    type: 3}
+  effectPrefab: []
+  fieldFeedBoxLimit: 10
+--- !u!114 &1305812170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305812166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263be45bcd2db45a69bfe91011d50b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPrefab: {fileID: 1403846987}
+  AornPrefab: {fileID: 1102608075429461677, guid: 8f2ce388a83d31e42af261905d6ded8a,
+    type: 3}
+  PikePrefab: {fileID: 6671044442422536719, guid: 8b0f0b26c2dc091489a285c632524dea,
+    type: 3}
+  CarrotPrefab: {fileID: 2804313564926022978, guid: 454fd938d80d6fd4880ee0cb8118fd8a,
+    type: 3}
+  MeatPrefab: {fileID: 7041291692828704211, guid: 3608ccafb89740442a0c56dd68eb6db6,
+    type: 3}
+  textObject: {fileID: 1828560940}
+  intervalTime: 0
 --- !u!4 &1317547719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4541142303025740, guid: d29bc40b7f3df26479d6a0aac211c355,
@@ -545,7 +558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: -112.75}
+  m_AnchoredPosition: {x: -167, y: -106}
   m_SizeDelta: {x: 160, y: 61.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828560942
