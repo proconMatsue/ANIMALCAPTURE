@@ -219,8 +219,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7629c9aa3cbd2c4e9061ce7242c0c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPrefab: {fileID: 1208988342737728, guid: f46f9eddea7bd4d4e813283cdc60cb96,
-    type: 3}
+  animalObject: {fileID: 380027751529315141}
+  angerObject: {fileID: 0}
+  animaltype: 0
+  point: 5
+  hungryRate: 20
+  checkHungryTime: 30
+  checkTime: 3
+  moveSpeed: 5
+  maxSpeed: 30
+  moveStopTime: 3
+  eatDistance: 3
 --- !u!1 &394604989658449845
 GameObject:
   m_ObjectHideFlags: 0
