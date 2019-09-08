@@ -11,7 +11,8 @@ public class SceneChangeManager : MonoBehaviour
     [SerializeField] private string NextScene = "stage01";
 
 
-    //GameObject gazeCircle = GameObject.Find("UISelectionBar");
+
+    GameObject gazeCircle;
     GameObject MixedRealityCameraParent;
 
     /*public void CallSceneChange()
@@ -22,6 +23,8 @@ public class SceneChangeManager : MonoBehaviour
     private void Start()
     {
         MixedRealityCameraParent = GameObject.Find("MixedRealityCameraParent");
+        gazeCircle = GameObject.Find("UISelectionBar");
+        gazeCircle.SetActive(false);
     }
 
     /// <summary>
