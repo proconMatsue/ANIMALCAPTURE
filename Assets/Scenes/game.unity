@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -558,6 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536509737}
   - component: {fileID: 1536509736}
+  - component: {fileID: 1536509738}
   m_Layer: 0
   m_Name: GeneratorManager
   m_TagString: Untagged
@@ -577,7 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263be45bcd2db45a69bfe91011d50b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedBoxPrefab: {fileID: 100000, guid: 88433be90094fd949ad898c825041776, type: 3}
   cameraPrefab: {fileID: 1403846987}
   AornPrefab: {fileID: 1102608075429461677, guid: 8f2ce388a83d31e42af261905d6ded8a,
     type: 3}
@@ -588,15 +588,7 @@ MonoBehaviour:
   MeatPrefab: {fileID: 7041291692828704211, guid: 3608ccafb89740442a0c56dd68eb6db6,
     type: 3}
   textObject: {fileID: 1198277817}
-  animalObject: []
-  foodBoxObject: []
-  effectObject: []
   intervalTime: 0
-  fieldAnimalLimit: 0
-  fieldFoodLimit: 0
-  fieldPozX: 0
-  fieldPozY: 0
-  fieldPozZ: 0
 --- !u!4 &1536509737
 Transform:
   m_ObjectHideFlags: 0
@@ -612,6 +604,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1536509738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536509735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e17ba18a5ddf242b791538860af397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedBoxPrefab: {fileID: 3215118852415182754, guid: f3ca78e85c2fba34a9f6d24afd772ea9,
+    type: 3}
+  effectPrefab: []
+  fieldFeedBoxLimit: 10
 --- !u!1001 &1870107314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -882,3 +890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e17ba18a5ddf242b791538860af397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feedBoxPrefab: {fileID: 0}
+  effectPrefab: []
+  fieldFeedBoxLimit: 10

@@ -18,7 +18,7 @@ public class FeedInventory : MonoBehaviour
     };
 
     //餌Boxのオブジェクト
-    [SerializeField] private GameObject feedBoxPrefab;
+    //[SerializeField] private GameObject feedBoxPrefab;
     //プレーヤのオブジェクト
     [SerializeField] private GameObject cameraPrefab;
     
