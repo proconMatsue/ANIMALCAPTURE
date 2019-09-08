@@ -191,7 +191,7 @@ public class Animal : MonoBehaviour
             (mytag == "cat" && colltag == "pike") ||
             (mytag == "squirrel" && colltag == "acorn") ||
             (mytag == "lion" && colltag == "meat") ||
-            (mytag == "" && colltag == "meat")
+            (mytag == "rabbit" && colltag == "carrot")
             )
         {
             Destroy(collision.gameObject);
