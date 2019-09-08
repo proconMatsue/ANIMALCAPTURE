@@ -15,6 +15,7 @@ public class SceneChangeManager : MonoBehaviour
     GameObject gazeCircle;
     GameObject MixedRealityCameraParent;
 
+
     /*public void CallSceneChange()
     {
         
