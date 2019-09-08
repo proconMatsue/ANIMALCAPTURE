@@ -130,6 +130,11 @@ public class Generator : MonoBehaviour
         feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
         Debug.Log("animalFeed : " + animalFeed);
 
+        /*for(feeding i = 0; i < (feeding)MaxNumberFeed-1; i++)
+        {
+            Debug.Log("FeedDictionary[i] : " + FeedDictionary[i]);
+        }*/
+
         if (FeedDictionary[animalFeed] <= 0)
         {
 
