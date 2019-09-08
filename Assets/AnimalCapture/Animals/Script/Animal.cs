@@ -53,18 +53,6 @@ public class Animal : MonoBehaviour
         {
             //頭の上に三角表示
             DisplayTriangle();
-            //注視入力完了はどう描くの？
-            if (true /*注視入力完了はどう描くの？*/ )
-            {
-                Eat();
-            }
-            else
-            {
-                if (isHungry == false)  //おなかがすいていない時おなかがすくかどうかを判定
-                {
-                    isHungry = HungryCheck();
-                }
-            }
         }
         else
         {
