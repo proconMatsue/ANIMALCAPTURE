@@ -440,9 +440,10 @@ GameObject:
   - component: {fileID: 6103849860781355162}
   - component: {fileID: 5196378169838159733}
   - component: {fileID: 7660405203784210441}
+  - component: {fileID: 7460504010807309916}
   m_Layer: 0
   m_Name: lion
-  m_TagString: Untagged
+  m_TagString: lion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,6 +512,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7460504010807309916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613329091641700877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7629c9aa3cbd2c4e9061ce7242c0c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPrefab: {fileID: 1208988342737728, guid: f46f9eddea7bd4d4e813283cdc60cb96,
+    type: 3}
 --- !u!1 &1725074688921189151
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3889536201753022074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3889536201753022075}
+  - component: {fileID: 3889536201753022052}
+  m_Layer: 0
+  m_Name: AnimalManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3889536201753022075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889536201753022074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 210.4725, y: 143.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3889536201753022052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889536201753022074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f6c13bb14ef974092cdcdcaf97969b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squirrelPrefab_normal: {fileID: 380027751529315141, guid: e3f95419e980e19428ba41c54734fc29,
+    type: 3}
+  catPrefab_normal: {fileID: 1837058609358483791, guid: 04b7580af0c329444a669fd1ebd65217,
+    type: 3}
+  rabbitPrefab_normal: {fileID: 6510677789388729598, guid: ad56b1d31e4c49546b95bcb73e751648,
+    type: 3}
+  lionPrefab_normal: {fileID: 1613329091641700877, guid: e847c101936ee22408cb3bb57c2402e8,
+    type: 3}
+  squirrelPrefab_angry: {fileID: 0}
+  catPrefab_angry: {fileID: 0}
+  rabbitPrefab_angry: {fileID: 0}
+  lionPrefab_angry: {fileID: 0}

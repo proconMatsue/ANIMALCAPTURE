@@ -946,9 +946,10 @@ GameObject:
   - component: {fileID: 1536849537799196491}
   - component: {fileID: 4469239051912564829}
   - component: {fileID: 1706540173497804362}
+  - component: {fileID: 8317793412586765001}
   m_Layer: 0
   m_Name: rabbit
-  m_TagString: Untagged
+  m_TagString: rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1017,6 +1018,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8317793412586765001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510677789388729598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7629c9aa3cbd2c4e9061ce7242c0c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPrefab: {fileID: 1208988342737728, guid: f46f9eddea7bd4d4e813283cdc60cb96,
+    type: 3}
 --- !u!1 &6905493835617856718
 GameObject:
   m_ObjectHideFlags: 0
