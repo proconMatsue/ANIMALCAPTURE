@@ -45,11 +45,9 @@ namespace HoloToolkit.Unity.Boundary
 
         // Testing in the editor found that this moved the floor out of the way enough, and it is only
         // used in the case where a headset isn't attached. Otherwise, the floor is positioned like normal.
-#if DEBUG
-        private readonly Vector3 floorPositionInEditor = new Vector3(0f, -0.2f, 0f);
-#else
+
         private readonly Vector3 floorPositionInEditor = new Vector3(0f, -3.0f, 0f);
-#endif
+
         [SerializeField]
         private bool renderFloor = true;
         public bool RenderFloor
