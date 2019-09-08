@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - feed
+  - cat
+  - squirrel
+  - carrot
+  - acorn
+  - meat
+  - pike
   layers:
   - Default
   - TransparentFX
