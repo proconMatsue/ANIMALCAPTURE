@@ -1,17 +1,25 @@
 fileFormatVersion: 2
-guid: c16f1a61c8a6cf54db1e6e313cf5b978
+guid: 349f73fcd401bc7408922f46115a920e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Cube
+    100006: Lamp
     400000: //RootNode
-    2100000: hontai
-    2100002: happa
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cone
-    7400000: Default Take
-    9500000: //RootNode
+    400002: Camera
+    400004: Cube
+    400006: Lamp
+    2000000: Camera
+    2100000: hako
+    2100002: huta
+    2300000: Cube
+    2300002: //RootNode
+    3300000: Cube
+    3300002: //RootNode
+    4300000: Cube
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -65,7 +73,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -92,7 +100,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

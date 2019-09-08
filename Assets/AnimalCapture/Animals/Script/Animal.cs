@@ -24,9 +24,9 @@ public class Animal : MonoBehaviour
     int direction = 0;                  //動物の向き
     //  key:animaltype values:{point, hungryRate, checkHungryTime, checkTime, moveSpeed, maxSpeed, moveStopTime}
     Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 10.0f, 5.0f, 10.0f, 10.0f, 3.0f}},
-                                                                            { 1, new List<float> { 5, 20, 30.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
-                                                                            { 2, new List<float> { 5, 20, 30.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
-                                                                            { 3, new List<float> { 5, 20, 30.0f, 5.0f, 15.0f, 30.0f, 3.0f}}};
+                                                                            { 1, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
+                                                                            { 2, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
+                                                                            { 3, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}}};
     enum parameter
     {
         point,
@@ -109,15 +109,15 @@ public class Animal : MonoBehaviour
             }
             else if (direction == 1)
             {
-                rotateY += Time.deltaTime * 180 / moveStopTime;
+                rotateY += Time.deltaTime * 180.0f / moveStopTime;
             }
             else if (direction == 2)
             {
-                rotateY += Time.deltaTime * 90 / moveStopTime;
+                rotateY += Time.deltaTime * 90.0f / moveStopTime;
             }
             else if (direction == 3)
             {
-                rotateY += Time.deltaTime * -90 / moveStopTime;
+                rotateY += Time.deltaTime * -90.0f / moveStopTime;
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
         }
@@ -129,6 +129,7 @@ public class Animal : MonoBehaviour
                 //gameObject.GetComponent<Rigidbody>().AddForce(moveForce);
                 gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
             }
+            transform.rotation = Quaternion.Euler(0, rotateY, 0);
         }
 
     }

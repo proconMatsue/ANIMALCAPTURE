@@ -1,80 +1,30 @@
 fileFormatVersion: 2
-guid: d2988f9ad6fbbc042955ba733f6bddb8
+guid: 954b31aaec7d8494886baac9ba4acf41
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cylinder
-    100004: doutai
-    100006: doutai_001
-    100008: eye
-    100010: eye_001
-    100012: head2
-    100014: head2_001
-    100016: leg_front
-    100018: mimi_001
-    100020: mimi_002
-    100022: nose
-    100024: tale
-    100026: tale_2
-    400000: //RootNode
-    400002: Cylinder
-    400004: doutai
-    400006: doutai_001
-    400008: eye
-    400010: eye_001
-    400012: head2
-    400014: head2_001
-    400016: leg_front
-    400018: mimi_001
-    400020: mimi_002
-    400022: nose
-    400024: tale
-    400026: tale_2
-    2100000: unnamed
-    2100002: black
-    2100004: eye_osto
-    2300000: Cylinder
-    2300002: doutai
-    2300004: doutai_001
-    2300006: eye
-    2300008: eye_001
-    2300010: head2
-    2300012: head2_001
-    2300014: leg_front
-    2300016: mimi_001
-    2300018: mimi_002
-    2300020: nose
-    2300022: tale
-    2300024: tale_2
-    3300000: Cylinder
-    3300002: doutai
-    3300004: doutai_001
-    3300006: eye
-    3300008: eye_001
-    3300010: head2
-    3300012: head2_001
-    3300014: leg_front
-    3300016: mimi_001
-    3300018: mimi_002
-    3300020: nose
-    3300022: tale
-    3300024: tale_2
-    4300000: nose
-    4300002: eye_001
-    4300004: eye
-    4300006: doutai_001
-    4300008: Cylinder
-    4300010: tale_2
-    4300012: tale
-    4300014: leg_front
-    4300016: mimi_002
-    4300018: mimi_001
-    4300020: head2_001
-    4300022: head2
-    4300024: doutai
-    7400000: Default Take
-    9500000: //RootNode
+    100000: Camera
+    100002: //RootNode
+    100004: Lamp
+    100006: "\u30C6\u30AD\u30B9\u30C8"
+    100008: "\u7ACB\u65B9\u4F53.001"
+    400000: Camera
+    400002: //RootNode
+    400004: Lamp
+    400006: "\u30C6\u30AD\u30B9\u30C8"
+    400008: "\u7ACB\u65B9\u4F53.001"
+    2000000: Camera
+    2100000: board2_color
+    2100002: tex_color
+    2300000: "\u30C6\u30AD\u30B9\u30C8"
+    2300002: "\u7ACB\u65B9\u4F53.001"
+    2300004: //RootNode
+    3300000: "\u30C6\u30AD\u30B9\u30C8"
+    3300002: "\u7ACB\u65B9\u4F53.001"
+    3300004: //RootNode
+    4300000: "\u7ACB\u65B9\u4F53.001"
+    4300002: "\u30C6\u30AD\u30B9\u30C8"
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -128,7 +78,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -155,7 +105,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

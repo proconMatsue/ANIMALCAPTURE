@@ -1,27 +1,14 @@
 fileFormatVersion: 2
-guid: f3ded5b609c916545a451acac0c932ec
+guid: 845a0280f32d2634e9145ee5ce0f8790
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: "\u7403"
-    100004: "\u7ACB\u65B9\u4F53"
     400000: //RootNode
-    400002: "\u7403"
-    400004: "\u7ACB\u65B9\u4F53"
-    2100000: body__body
-    2100002: basic__basic_Diffuse_Color
-    2100004: basic
-    2100006: eye
-    2300000: "\u7403"
-    2300002: "\u7ACB\u65B9\u4F53"
-    3300000: "\u7403"
-    3300002: "\u7ACB\u65B9\u4F53"
-    4300000: "\u7ACB\u65B9\u4F53"
-    4300002: "\u7403"
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+    2100000: sankaku
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cone
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -75,7 +62,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -102,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

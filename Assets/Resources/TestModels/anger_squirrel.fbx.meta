@@ -1,24 +1,29 @@
 fileFormatVersion: 2
-guid: f91dbc289fdc9274ea5d7561e4812062
+guid: c5013727dcf58934c8b03dd29a6aea4e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: "\u30C6\u30AD\u30B9\u30C8"
-    100004: "\u7ACB\u65B9\u4F53_001"
+    100002: Camera
+    100004: Lamp
+    100006: "\u7403"
+    100008: "\u7ACB\u65B9\u4F53"
     400000: //RootNode
-    400002: "\u30C6\u30AD\u30B9\u30C8"
-    400004: "\u7ACB\u65B9\u4F53_001"
-    2100000: board2_color
-    2100002: tex_color
-    2300000: "\u30C6\u30AD\u30B9\u30C8"
-    2300002: "\u7ACB\u65B9\u4F53_001"
-    3300000: "\u30C6\u30AD\u30B9\u30C8"
-    3300002: "\u7ACB\u65B9\u4F53_001"
-    4300000: "\u7ACB\u65B9\u4F53_001"
-    4300002: "\u30C6\u30AD\u30B9\u30C8"
-    7400000: Default Take
-    9500000: //RootNode
+    400002: Camera
+    400004: Lamp
+    400006: "\u7403"
+    400008: "\u7ACB\u65B9\u4F53"
+    2000000: Camera
+    2100000: body
+    2100002: basic
+    2100004: anger_eye
+    2300000: "\u7403"
+    2300002: "\u7ACB\u65B9\u4F53"
+    3300000: "\u7403"
+    3300002: "\u7ACB\u65B9\u4F53"
+    4300000: "\u7ACB\u65B9\u4F53"
+    4300002: "\u7403"
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,7 +77,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -99,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

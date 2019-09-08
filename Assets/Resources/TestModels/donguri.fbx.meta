@@ -1,27 +1,28 @@
 fileFormatVersion: 2
-guid: fe2ac821a8a8a77419e671a0d9acbd1b
+guid: 1c9c65ee5ecd47f439bedd95e865926e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: "\u7403"
-    100004: "\u7ACB\u65B9\u4F53"
-    400000: //RootNode
-    400002: "\u7403"
-    400004: "\u7ACB\u65B9\u4F53"
-    2100000: body__body
-    2100002: basic__basic_Diffuse_Color
-    2100004: basic
-    2100006: anger_eye
+    100000: Camera
+    100002: //RootNode
+    100004: Lamp
+    100006: "\u7403"
+    100008: "\u7403.001"
+    400000: Camera
+    400002: //RootNode
+    400004: Lamp
+    400006: "\u7403"
+    400008: "\u7403.001"
+    2000000: Camera
+    2100000: donguri_head
+    2100002: donguri_body
     2300000: "\u7403"
-    2300002: "\u7ACB\u65B9\u4F53"
+    2300002: "\u7403.001"
     3300000: "\u7403"
-    3300002: "\u7ACB\u65B9\u4F53"
-    4300000: "\u7ACB\u65B9\u4F53"
+    3300002: "\u7403.001"
+    4300000: "\u7403.001"
     4300002: "\u7403"
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -75,7 +76,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -102,7 +103,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
