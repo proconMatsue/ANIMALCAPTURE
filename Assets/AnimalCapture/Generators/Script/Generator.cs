@@ -35,7 +35,7 @@ public class Generator : MonoBehaviour
     [SerializeField] private float DestryTime = 20.0f;
 
     //所持できる餌の数の上限
-    [SerializeField] private int MaxNumberFeed = 4;
+    [SerializeField] private int MaxNumberFeed = 5;
 
     /*public GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
     public GameObject[] foodBoxObject;//生成する餌Boxオブジェクトを格納する配列
