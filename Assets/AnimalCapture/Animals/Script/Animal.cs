@@ -27,7 +27,6 @@ public class Animal : MonoBehaviour
                                                                             { 1, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
                                                                             { 2, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
                                                                             { 3, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}}};
-
     enum parameter
     {
         point,
@@ -81,11 +80,10 @@ public class Animal : MonoBehaviour
         preCheckTime = 0;
     }
 
-    /// <summary>
-    /// 動物を動かすための関数
-    /// </summary>
-    private void Move()
+    //動物の移動
+    void Move()
     {
+
         if (Time.time - preCheckTime > checkTime || preCheckTime == 0)
         {
             //方向を変える
@@ -134,6 +132,7 @@ public class Animal : MonoBehaviour
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
         }
+
     }
 
     //おなかがすいたかのチェック（checkTimeの周期）

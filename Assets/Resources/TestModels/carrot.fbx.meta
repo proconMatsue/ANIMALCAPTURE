@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 69c3c52c30abe47a497b19bcc6d87554
+guid: b7a8e53584f4b2741b910792e26128e5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Camera
-    100002: Lamp
-    100004: Point
-    100006: //RootNode
-    100008: rabbit
+    100002: //RootNode
+    100004: Cone
+    100006: Lamp
     400000: Camera
-    400002: Lamp
-    400004: Point
-    400006: //RootNode
-    400008: rabbit
+    400002: //RootNode
+    400004: Cone
+    400006: Lamp
     2000000: Camera
-    2100000: Material
-    2300000: rabbit
+    2100000: hontai
+    2100002: happa
+    2300000: Cone
     2300002: //RootNode
-    3300000: rabbit
+    3300000: Cone
     3300002: //RootNode
-    4300000: rabbit
+    4300000: Cone
     10800000: Lamp
-    10800002: Point
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

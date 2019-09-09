@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 69c3c52c30abe47a497b19bcc6d87554
+guid: 6aea932f97743dc4390a6b5b07005995
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Lamp
-    100004: Point
-    100006: //RootNode
+    100000: //RootNode
+    100002: Camera
+    100004: Lamp
+    100006: Point
     100008: rabbit
-    400000: Camera
-    400002: Lamp
-    400004: Point
-    400006: //RootNode
+    400000: //RootNode
+    400002: Camera
+    400004: Lamp
+    400006: Point
     400008: rabbit
     2000000: Camera
     2100000: Material

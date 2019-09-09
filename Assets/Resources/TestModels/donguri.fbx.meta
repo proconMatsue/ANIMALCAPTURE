@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 69c3c52c30abe47a497b19bcc6d87554
+guid: 1c9c65ee5ecd47f439bedd95e865926e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Camera
-    100002: Lamp
-    100004: Point
-    100006: //RootNode
-    100008: rabbit
+    100002: //RootNode
+    100004: Lamp
+    100006: "\u7403"
+    100008: "\u7403.001"
     400000: Camera
-    400002: Lamp
-    400004: Point
-    400006: //RootNode
-    400008: rabbit
+    400002: //RootNode
+    400004: Lamp
+    400006: "\u7403"
+    400008: "\u7403.001"
     2000000: Camera
-    2100000: Material
-    2300000: rabbit
-    2300002: //RootNode
-    3300000: rabbit
-    3300002: //RootNode
-    4300000: rabbit
+    2100000: donguri_head
+    2100002: donguri_body
+    2300000: "\u7403"
+    2300002: "\u7403.001"
+    3300000: "\u7403"
+    3300002: "\u7403.001"
+    4300000: "\u7403.001"
+    4300002: "\u7403"
     10800000: Lamp
-    10800002: Point
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
