@@ -54,6 +54,7 @@ public class AnimalManager : MonoBehaviour
                 RandomAnimalObject(),
                 new Vector3(Random.Range(-3.0f, 3.0f), 0.0f, Random.Range(-3.0f, 3.0f)),
                 this.gameObject.transform.rotation);
+            a.AnimalObject.transform.parent = transform;
             a.AngerTime = Random.Range(10.0f, 60.0f);
             a.IsAangry = false;
             Animal.Add(a);

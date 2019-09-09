@@ -37,6 +37,7 @@ public class Animal : MonoBehaviour
         maxSpeed,
         moveStopTime
     }
+
     // Start is called before the first frame update
     void Start()
     {
