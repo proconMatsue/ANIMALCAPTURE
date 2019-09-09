@@ -45,7 +45,7 @@ public class FeedInventory : MonoBehaviour
     //所持している餌の数(key: 餌の種類, value: 餌の数)
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
-    public float intervalTime;//生成間隔のインターバルタイム設定用関数
+    //public float intervalTime;//生成間隔のインターバルタイム設定用関数
 
     /// <summary>
     /// 初期化を行う関数
@@ -178,4 +178,11 @@ public class FeedInventory : MonoBehaviour
             default: Debug.LogWarning("unexpected return."); return Feeding.Unexpect;
         }
     }
+
+    public void IncreaseFeed()//餌boxを拾ったときに持っている餌を増やす関数
+    {
+        FeedDictionary[GenerateRandamFeeding()]++;
+    }
+
+
 }

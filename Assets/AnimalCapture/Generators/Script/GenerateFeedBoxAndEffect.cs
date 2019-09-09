@@ -8,12 +8,16 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     [SerializeField] private GameObject feedBoxPrefab;//餌boxのオブジェクト
     [SerializeField] private GameObject[] effectPrefab;//生成するエフェクトオブジェクトを格納する配列
 
-    public int fieldFeedBoxLimit = 10; //フィールドに生成する餌boxの上限数
+    [SerializeField] private int fieldFeedBoxLimit = 10; //フィールドに生成する餌boxの上限数
+    [SerializeField] private float intervalTime = 5.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        GenerateFeedBox();
+        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit)//フィールド場の餌boxを数え、減っている数だけ生成する
+        {
+            GenerateFeedBox();
+        }
     }
 
     // Update is called once per frame
@@ -31,14 +35,12 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
         return countNum;
     }
 
+
     //餌boxを生成する関数
     public void GenerateFeedBox()//餌boxを生成する関数 引数でanimalObjectの場所を指定
     {
-        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit)//フィールド場の餌boxを数え、減っている数だけ生成する
-        {
             Instantiate(feedBoxPrefab, new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f),
-         0.0f, UnityEngine.Random.Range(-3.0f, 3.0f)), Quaternion.identity);//xy座標はフィールド範囲内でランダムで生成
-        }
+         0.0f, UnityEngine.Random.Range(-3.0f, 3.0f)), Quaternion.Euler(-90.0f,0f,0f));//xy座標はフィールド範囲内でランダムで生成
     }
 
     //エフェクトを生成する関数
@@ -52,6 +54,12 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
                     effectTarget.transform.position.z),
                     Quaternion.identity
                     );
+    }
+
+
+    public void CallGenerateFeedBox()//餌を取得しbox後,遅らせて新しい餌boxを生成する関数
+    {
+        Invoke("GenerateFeedBox", 3.0f);//3秒後に新しい餌boxを生成
     }
 
 

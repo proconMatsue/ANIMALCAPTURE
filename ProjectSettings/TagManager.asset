@@ -11,6 +11,9 @@ TagManager:
   - acorn
   - meat
   - pike
+  - lion
+  - rabbit
+  - feedbox
   layers:
   - Default
   - TransparentFX
