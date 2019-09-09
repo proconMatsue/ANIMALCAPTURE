@@ -11,9 +11,10 @@ public class SceneChangeManager : MonoBehaviour
     [SerializeField] private string NextScene = "stage01";
 
 
-
     GameObject gazeCircle;
     GameObject MixedRealityCameraParent;
+    GameObject InputManager;
+    GameObject SpatialMapping;
 
 
     /*public void CallSceneChange()
@@ -24,8 +25,10 @@ public class SceneChangeManager : MonoBehaviour
     private void Start()
     {
         MixedRealityCameraParent = GameObject.Find("MixedRealityCameraParent");
-        gazeCircle = GameObject.Find("UISelectionBar");
-        gazeCircle.SetActive(false);
+        gazeCircle = GameObject.Find("DefaultCursorWithGazeSelector");
+        InputManager = GameObject.Find("InputManager");
+        SpatialMapping = GameObject.Find("SpatialMapping");
+        //gazeCircle.SetActive(false);
     }
 
     /// <summary>
@@ -33,7 +36,10 @@ public class SceneChangeManager : MonoBehaviour
     /// </summary>
     public void SceneChange()
     {
-        Destroy(MixedRealityCameraParent);
+        Destroy(MixedRealityCameraParent);//次のシーンで被ってしまうオブジェクトをシーン直前に削除
+        Destroy(gazeCircle);
+        Destroy(InputManager);
+        Destroy(SpatialMapping);
         SceneManager.LoadScene(NextScene);
         //gazeCircle.SetActive(false);
     }
