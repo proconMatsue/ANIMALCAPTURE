@@ -195,6 +195,7 @@ public class Animal : MonoBehaviour
             (mytag == "rabbit" && colltag == "carrot")
             )
         {
+            Eat();
             Destroy(collision.gameObject);
         }
     }
