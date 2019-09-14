@@ -19,6 +19,11 @@ ModelImporter:
     100026: nose
     100028: tale
     100030: tale_2
+    100032: doutai_001
+    100034: eye_001
+    100036: head2_001
+    100038: mimi_001
+    100040: mimi_002
     400000: Camera
     400002: //RootNode
     400004: Cylinder
@@ -35,10 +40,16 @@ ModelImporter:
     400026: nose
     400028: tale
     400030: tale_2
+    400032: doutai_001
+    400034: eye_001
+    400036: head2_001
+    400038: mimi_001
+    400040: mimi_002
     2000000: Camera
     2100000: No Name
     2100002: black
     2100004: eye_osto
+    2100006: unnamed
     2300000: Cylinder
     2300002: doutai
     2300004: doutai.001
@@ -52,6 +63,11 @@ ModelImporter:
     2300020: nose
     2300022: tale
     2300024: tale_2
+    2300026: doutai_001
+    2300028: eye_001
+    2300030: head2_001
+    2300032: mimi_001
+    2300034: mimi_002
     3300000: Cylinder
     3300002: doutai
     3300004: doutai.001
@@ -65,6 +81,11 @@ ModelImporter:
     3300020: nose
     3300022: tale
     3300024: tale_2
+    3300026: doutai_001
+    3300028: eye_001
+    3300030: head2_001
+    3300032: mimi_001
+    3300034: mimi_002
     4300000: nose
     4300002: eye.001
     4300004: eye
@@ -78,6 +99,11 @@ ModelImporter:
     4300020: head2.001
     4300022: head2
     4300024: doutai
+    4300026: eye_001
+    4300028: doutai_001
+    4300030: mimi_002
+    4300032: mimi_001
+    4300034: head2_001
     10800000: Lamp
   externalObjects: {}
   materials:

@@ -1,28 +1,30 @@
 fileFormatVersion: 2
-guid: 69c3c52c30abe47a497b19bcc6d87554
+guid: 954b31aaec7d8494886baac9ba4acf41
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Camera
-    100002: Lamp
-    100004: Point
-    100006: //RootNode
-    100008: rabbit
+    100002: //RootNode
+    100004: Lamp
+    100006: "\u30C6\u30AD\u30B9\u30C8"
+    100008: "\u7ACB\u65B9\u4F53.001"
     400000: Camera
-    400002: Lamp
-    400004: Point
-    400006: //RootNode
-    400008: rabbit
+    400002: //RootNode
+    400004: Lamp
+    400006: "\u30C6\u30AD\u30B9\u30C8"
+    400008: "\u7ACB\u65B9\u4F53.001"
     2000000: Camera
-    2100000: Material
-    2300000: rabbit
-    2300002: //RootNode
-    3300000: rabbit
-    3300002: //RootNode
-    4300000: rabbit
+    2100000: board2_color
+    2100002: tex_color
+    2300000: "\u30C6\u30AD\u30B9\u30C8"
+    2300002: "\u7ACB\u65B9\u4F53.001"
+    2300004: //RootNode
+    3300000: "\u30C6\u30AD\u30B9\u30C8"
+    3300002: "\u7ACB\u65B9\u4F53.001"
+    3300004: //RootNode
+    4300000: "\u7ACB\u65B9\u4F53.001"
+    4300002: "\u30C6\u30AD\u30B9\u30C8"
     10800000: Lamp
-    10800002: Point
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
