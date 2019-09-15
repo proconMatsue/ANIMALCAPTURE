@@ -17,6 +17,8 @@ public class FeedInventory : MonoBehaviour
         Unexpect = 0xff //想定外の値   
     };
 
+    //餌Boxのオブジェクト
+    //[SerializeField] private GameObject feedBoxPrefab;
     //プレーヤのオブジェクト
     [SerializeField] private GameObject cameraPrefab;
     
@@ -26,6 +28,8 @@ public class FeedInventory : MonoBehaviour
     [SerializeField] public GameObject CarrotPrefab;
     [SerializeField] public GameObject MeatPrefab;
 
+    [SerializeField] private GameObject textObject;
+
     //餌を射出するときのスピード
     [SerializeField] private readonly float speed = 300.0f;
     //餌オブジェクトを破壊するまでにかかる時間
@@ -34,11 +38,14 @@ public class FeedInventory : MonoBehaviour
     //所持できる餌の数の上限
     [SerializeField] private readonly int MaxNumberFeed = 5;
 
-    //生成間隔のインターバルタイム設定用関数
-    [SerializeField] private float intervalTime;
+    // GameObject[] animalObject;//生成する動物オブジェクトを格納する配列
+    //public GameObject[] foodBoxObject;//生成する餌Boxオブジェクトを格納する配列
+    //public GameObject[] effectObject;//生成するエフェクトオブジェクトを格納する配列
 
-    //所持する餌の個数を管理しておくもの
+    //所持している餌の数(key: 餌の種類, value: 餌の数)
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
+
+    public float intervalTime;//生成間隔のインターバルタイム設定用関数
 
     /// <summary>
     /// 初期化を行う関数
@@ -69,15 +76,36 @@ public class FeedInventory : MonoBehaviour
     }
 
     /// <summary>
-    /// 餌を表示するための関数
+    /// 左下のUI部に所持している餌を表示するための関数
+    /// 要移動
     /// </summary>
-    public void FeedDisplay(GameObject textObject)
+    private void Update()
     {
         // オブジェクトからTextコンポーネントを取得
         Text text = textObject.GetComponent<Text>();
         text.text = "どんぐり : " + FeedDictionary[Feeding.Acorn] + " " + "さんま : " + FeedDictionary[Feeding.Pike] + " \n"
                 + "ニンジン : " + FeedDictionary[Feeding.Carrot] + " " + "肉 : " + FeedDictionary[Feeding.Meat] + " ";
     }
+
+    /*public int CheckFieldObject(string objecttag)//フィールド場の指定したオブジェクトの数を返す関数
+    {
+        int countNum;
+        GameObject[] countObject = GameObject.FindGameObjectsWithTag(objecttag);//タグでオブジェクトを指定
+        countNum = countObject.Length;
+        return countNum;
+    }*/
+
+    /*public void GenerateAnimal(int num)//実際に動物を生成する関数 引数でanimalObjectの場所を指定
+    {
+        Instantiate(
+            animalObject[num], 
+            new Vector3( 
+                UnityEngine.Random.Range(-3.0f,3.0f),
+                0.0f,
+                UnityEngine.Random.Range(-3.0f, 3.0f)),
+            Quaternion.identity
+        );//xy座標はランダムで生成
+    }*/
 
     /// <summary>
     /// ランダムに餌を出現させる
