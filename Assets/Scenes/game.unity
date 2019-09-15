@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -530,8 +530,8 @@ MonoBehaviour:
   OnSelectionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Feeing
+      - m_Target: {fileID: 1305812166}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -622,6 +622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MapCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541831356362513755, guid: be9ace29dd5da264f81fcaa2eb2c1598,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7541831356362513700, guid: be9ace29dd5da264f81fcaa2eb2c1598,
         type: 3}
