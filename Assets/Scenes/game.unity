@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 455778267}
   - component: {fileID: 455778266}
   - component: {fileID: 455778268}
+  - component: {fileID: 455778270}
   m_Layer: 0
   m_Name: FeedDisplayManager
   m_TagString: Untagged
@@ -510,6 +511,20 @@ Transform:
   m_Father: {fileID: 1009587282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &455778270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455778265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAxis: 6
+  targetTransform: {fileID: 0}
 --- !u!1 &780000211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011021619270, guid: d379ed0a5618c9f479f58bd83a2d0ad3,
