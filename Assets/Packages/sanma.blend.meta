@@ -1,31 +1,46 @@
 fileFormatVersion: 2
 guid: 332c031ec086dc745a4e87d053382a73
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Cylinder
     100002: eye
     100004: eye_001
     100006: //RootNode
+    100008: Camera
+    100010: eye.001
+    100012: Lamp
     400000: Cylinder
     400002: eye
     400004: eye_001
     400006: //RootNode
+    400008: Camera
+    400010: eye.001
+    400012: Lamp
+    2000000: Camera
     2100000: Material_001
     2100002: Material_002
     2100004: Material_005
     2100006: Material_003
+    2100008: Material.001
+    2100010: Material.002
+    2100012: Material.005
+    2100014: Material.003
     2300000: Cylinder
     2300002: eye
     2300004: eye_001
+    2300006: eye.001
     3300000: Cylinder
     3300002: eye
     3300004: eye_001
+    3300006: eye.001
     4300000: eye_001
     4300002: eye
     4300004: Cylinder
+    4300006: eye.001
     7400000: Default Take
     9500000: //RootNode
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -45,6 +60,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -59,6 +75,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -76,11 +93,16 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -95,7 +117,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
