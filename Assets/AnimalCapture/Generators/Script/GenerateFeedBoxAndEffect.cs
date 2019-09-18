@@ -36,8 +36,13 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     {
         while (CheckFieldObject("feedbox") < fieldFeedBoxLimit)//フィールド場の餌boxを数え、減っている数だけ生成する
         {
-            Instantiate(feedBoxPrefab, new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f),
-         0.0f, UnityEngine.Random.Range(-3.0f, 3.0f)), Quaternion.identity);//xy座標はフィールド範囲内でランダムで生成
+
+            GameObject feedBox = Instantiate(
+                feedBoxPrefab, 
+                new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 0.0f, UnityEngine.Random.Range(-3.0f, 3.0f)), //xy座標はフィールド範囲内でランダムで生成 
+                Quaternion.identity
+                );
+            feedBox.transform.parent = this.gameObject.transform;
         }
     }
 

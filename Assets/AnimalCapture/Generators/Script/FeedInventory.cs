@@ -29,15 +29,15 @@ public class FeedInventory : MonoBehaviour
     [SerializeField] public GameObject MeatPrefab;
 
     //餌を射出するときのスピード
-    [SerializeField] private readonly float speed = 300.0f;
+    [SerializeField] private float speed = 300.0f;
     //餌オブジェクトを破壊するまでにかかる時間
-    [SerializeField] private readonly float DestryTime = 20.0f;
+    [SerializeField] private float DestryTime = 20.0f;
 
     //所持できる餌の数の上限
-    [SerializeField] private readonly int MaxNumberFeed = 5;
+    [SerializeField] private int MaxNumberFeed = 5;
 
     //生成間隔のインターバルタイム設定用関数
-    [SerializeField] private float intervalTime;
+    //[SerializeField] private float intervalTime;
 
     //所持している餌の数(key: 餌の種類, value: 餌の数)
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
@@ -108,6 +108,7 @@ public class FeedInventory : MonoBehaviour
         }
         else
         {
+            
             GameObject feedInstance = Instantiate<GameObject>(
                 FeedTable(animalFeed), cameraPrefab.transform.position, cameraPrefab.transform.rotation);
             //投げるゲームオブジェクトはリスとから消しておく
