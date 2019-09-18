@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// animalObject: 動物のオブジェクト
+/// </summary>
 class animals
 {
     private GameObject animalObject;
-    private float angerTime;
-    private bool isAnger;
+    //private float angerTime;
+    //private bool isAnger;
 
     public GameObject AnimalObject { set; get; }
-    public float AngerTime { get; set; }
-    public bool IsAangry { set; get; }
+    //public float AngerTime { get; set; }
+    //public bool IsAangry { set; get; }
 }
 
 public class AnimalManager : MonoBehaviour
@@ -50,24 +53,25 @@ public class AnimalManager : MonoBehaviour
         for(int i = 0; i < MaxNumberAnimals; i++)
         {
             animals a = new animals();
+
             a.AnimalObject = Instantiate<GameObject>(
                 RandomAnimalObject(),
-                new Vector3(Random.Range(-30.0f, 30.0f), 0.0f, Random.Range(-30.0f, 30.0f)),
+                new Vector3(Random.Range(-30.0f, 30.0f), 10.0f, Random.Range(-30.0f, 30.0f)),
                 this.gameObject.transform.rotation);
             a.AnimalObject.transform.parent = transform;
-            a.AngerTime = Random.Range(10.0f, 60.0f);
-            a.IsAangry = false;
+            //a.AngerTime = Random.Range(10.0f, 60.0f);
+            //a.IsAangry = false;
             Animal.Add(a);
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
         for(int i = 0; i < MaxNumberAnimals; i++)
         {
             if(Animal[i].AngerTime >= Time.deltaTime){ Animal[i].IsAangry = true; }
         }
-    } 
+    }*/ 
 
     /// <summary>
     /// ランダムに動物オブジェクトを返す関数
