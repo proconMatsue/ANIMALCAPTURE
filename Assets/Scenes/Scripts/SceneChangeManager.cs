@@ -48,9 +48,10 @@ public class SceneChangeManager : MonoBehaviour
     /// </summary>
     public void SceneChange()
     {
+        //次のシーンで被ってしまうオブジェクトをシーン直前に削除
         if (MixedRealityCameraParent != null)
         {
-            Destroy(MixedRealityCameraParent);//次のシーンで被ってしまうオブジェクトをシーン直前に削除
+            Destroy(MixedRealityCameraParent);
         }
         if (gazeCircle != null)
         {
@@ -64,6 +65,7 @@ public class SceneChangeManager : MonoBehaviour
         {
             Destroy(SpatialMapping);
         }
+
         SceneManager.LoadScene(NextScene);
         //gazeCircle.SetActive(false);
     }
@@ -72,9 +74,10 @@ public class SceneChangeManager : MonoBehaviour
     {
         if (Time.time - startTime > sceneChangeTime)
         {
+            //次のシーンで被ってしまうオブジェクトをシーン直前に削除
             if (MixedRealityCameraParent != null)
             {
-                Destroy(MixedRealityCameraParent);//次のシーンで被ってしまうオブジェクトをシーン直前に削除
+                Destroy(MixedRealityCameraParent);
             }
             if (gazeCircle != null)
             {
