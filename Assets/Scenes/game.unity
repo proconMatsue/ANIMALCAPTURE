@@ -1093,6 +1093,11 @@ PrefabInstance:
       propertyPath: generatePosRange_z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3889536201753022052, guid: 1bca2869d459c74489d0f29f59523657,
+        type: 3}
+      propertyPath: AnimalScale
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bca2869d459c74489d0f29f59523657, type: 3}
 --- !u!1001 &4662516306103650212
@@ -1175,12 +1180,12 @@ PrefabInstance:
     - target: {fileID: 4662516307115334509, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
       propertyPath: generatePosRange_x
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4662516307115334509, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
       propertyPath: generatePosRange_z
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40b8464970acb2d4e874980c6f55cd10, type: 3}

@@ -51,6 +51,10 @@ public class AnimalManager : MonoBehaviour
     [Range(0.0f, 5.0f)]
     private float generatePosRange_z = 1.0f;
 
+    [SerializeField, Tooltip("動物の大きさ\n(1から何倍するかを表している)")]
+    [Range(0.0f, 1.0f)]
+    private float AnimalScale = 0.1f;
+
     //フィールド上の動物を格納する変数
     List<animals> Animal = new List<animals>();
             
@@ -89,6 +93,9 @@ public class AnimalManager : MonoBehaviour
 
         //アニマルマネージャの子オブジェクトとする
         a.AnimalObject.transform.parent = transform;
+
+        //動物オブジェクトの大きさを動的に変更
+        a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
         //a.AngerTime = Random.Range(10.0f, 60.0f);
         //a.IsAangry = false;
 
