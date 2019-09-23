@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95bd2a55b78a1b4197a6d702889aaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: tutorial
+  NextScene: tutorial1
+  useTimer: 0
   sceneChangeTime: 0
