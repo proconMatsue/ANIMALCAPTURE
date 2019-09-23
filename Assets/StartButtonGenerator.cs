@@ -9,9 +9,18 @@ public class StartButtonGenerator : MonoBehaviour
     private GameObject StartButton;
 
     /// <summary>
+    /// ゲームスタート時にスタートボタンを生成するようにする
+    /// </summary>
+    private void Start()
+    {
+        //スタートボタン生成関数
+        generateStartButton();
+    }
+
+    /// <summary>
     /// ただ, スタートボタンを生み出すだけの関数
     /// </summary>
-    public void generateStartButton(object source, System.EventArgs args)
+    public void generateStartButton()
     {
         GameObject start = Instantiate<GameObject>(
             StartButton, 

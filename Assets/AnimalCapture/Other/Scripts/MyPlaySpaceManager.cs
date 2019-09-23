@@ -40,10 +40,6 @@ public class MyPlaySpaceManager : Singleton<MyPlaySpaceManager>
         //SurfaceMeshesToPlanes_MakePlanesComplete関数
         //を呼び出すようにしている
         SurfaceMeshesToPlanes.Instance.MakePlanesComplete += SurfaceMeshesToPlanes_MakePlanesComplete;
-
-        //スタートボタンの作成
-        StartButtonGenerator start = new StartButtonGenerator();
-        SurfaceMeshesToPlanes.Instance.MakePlanesComplete += start.generateStartButton;
     }
 
     /// <summary>

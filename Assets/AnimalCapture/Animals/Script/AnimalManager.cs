@@ -29,49 +29,72 @@ public class AnimalManager : MonoBehaviour
     }
 
     //ノーマル状態の動物オブジェクトのプレハブ
-    [SerializeField] private GameObject squirrelPrefab_normal;
-    [SerializeField] private GameObject catPrefab_normal;
-    [SerializeField] private GameObject rabbitPrefab_normal;
-    [SerializeField] private GameObject lionPrefab_normal;
+    [SerializeField, Tooltip("ノーマル状態のリスのプレハブ")] private GameObject squirrelPrefab_normal;
+    [SerializeField, Tooltip("ノーマル状態のネコのプレハブ")] private GameObject catPrefab_normal;
+    [SerializeField, Tooltip("ノーマル状態のウサギのプレハブ")] private GameObject rabbitPrefab_normal;
+    [SerializeField, Tooltip("ノーマル状態のライオンのプレハブ")] private GameObject lionPrefab_normal;
 
     //怒り状態の動物オブジェクトのプレハブ
-    [SerializeField] private GameObject squirrelPrefab_angry;
-    [SerializeField] private GameObject catPrefab_angry;
-    [SerializeField] private GameObject rabbitPrefab_angry;
-    [SerializeField] private GameObject lionPrefab_angry;
+    [SerializeField, Tooltip("怒り状態のリスのプレハブ")] private GameObject squirrelPrefab_angry;
+    [SerializeField, Tooltip("怒り状態のネコのプレハブ")] private GameObject catPrefab_angry;
+    [SerializeField, Tooltip("怒り状態のウサギのプレハブ")] private GameObject rabbitPrefab_angry;
+    [SerializeField, Tooltip("怒り状態のライオンのプレハブ")] private GameObject lionPrefab_angry;
 
     //存在できる動物の数の上限
-    [SerializeField] private readonly int MaxNumberAnimals = 5;
+    [SerializeField, Tooltip("フィールド上に存在できる動物の数")] private readonly int MaxNumberAnimals = 5;
+
+    //生成する動物の生成位置
+    [SerializeField, Tooltip("動物の生成位置のX成分\n(プレーヤを中心として指定した範囲に動物が生成される)")]
+    [Range(0.0f, 2.0f)]
+    private float generatePosRange_x = 1.0f;
+    [SerializeField, Tooltip("動物の生成位置のZ成分\n(プレーヤを中心として指定した範囲に動物が生成される)")]
+    [Range(0.0f, 2.0f)]
+    private float generatePosRange_z = 1.0f;
 
     //フィールド上の動物を格納する変数
     List<animals> Animal = new List<animals>();
 
-
+    /// <summary>
+    /// スタート時に動物を5体生成する
+    /// </summary>
     private void Start()
     {
         //最初に5匹フィールドに出す
         for(int i = 0; i < MaxNumberAnimals; i++)
         {
-            animals a = new animals();
-
-            a.AnimalObject = Instantiate<GameObject>(
-                RandomAnimalObject(),
-                new Vector3(Random.Range(-30.0f, 30.0f), 10.0f, Random.Range(-30.0f, 30.0f)),
-                this.gameObject.transform.rotation);
-            a.AnimalObject.transform.parent = transform;
-            //a.AngerTime = Random.Range(10.0f, 60.0f);
-            //a.IsAangry = false;
-            Animal.Add(a);
+            generateAnimal();
         }
     }
 
-    /*private void Update()
+
+    /// <summary>
+    /// 動物を生成し, 動物リストの中に格納するまでを行う関数
+    /// </summary>
+    private void generateAnimal()
     {
-        for(int i = 0; i < MaxNumberAnimals; i++)
-        {
-            if(Animal[i].AngerTime >= Time.deltaTime){ Animal[i].IsAangry = true; }
-        }
-    }*/ 
+        //アニマルクラスの変数のインスタンスを生成
+        animals a = new animals();
+
+        //オブジェクトを生成
+        //x-z座標はインスペクタで指定した範囲内でランダム
+        a.AnimalObject = Instantiate<GameObject>(
+            RandomAnimalObject(),
+            new Vector3(
+                Random.Range(-generatePosRange_x, generatePosRange_x), 
+                10.0f, 
+                Random.Range(-generatePosRange_z, generatePosRange_z)
+            ),
+            this.gameObject.transform.rotation);
+
+        //アニマルマネージャの子オブジェクトとする
+        a.AnimalObject.transform.parent = transform;
+        //a.AngerTime = Random.Range(10.0f, 60.0f);
+        //a.IsAangry = false;
+
+        //リストに格納しておく
+        Animal.Add(a);
+    }
+
 
     /// <summary>
     /// ランダムに動物オブジェクトを返す関数
@@ -108,33 +131,4 @@ public class AnimalManager : MonoBehaviour
             default: Debug.LogWarning("unexpected return."); return null;
         }
     }
-
-    /// <summary>
-    /// 動物の状態を反転させる関数(通常 ⇔ 怒り)
-    /// 状態を変換させるときのみに呼ばれることを予想している
-    /// </summary>
-    /*public void ChangeAnimalState(Generator.Animals animals, bool isAngry)
-    {
-        Transform temp_transform;
-        //動物が怒っていたら
-        if (isAngry)
-        {
-            temp_transform = AnimalObject.transform;
-            Destroy(animalObject);
-            AnimalObject = Instantiate<GameObject>(
-               AnimalTable(animals, isAngry) , temp_transform.position, temp_transform.rotation);
-        }
-        //怒っていないとき
-        else
-        {
-            temp_transform = AnimalObject.transform;
-            Destroy(animalObject);
-            AnimalObject = Instantiate<GameObject>(
-               AnimalTable(animals, isAngry), temp_transform.position, temp_transform.rotation);
-        }
-
-        //状態の反転
-        isAngry = !isAngry;
-    }*/
-
 }
