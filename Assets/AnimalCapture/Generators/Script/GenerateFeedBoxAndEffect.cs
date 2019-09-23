@@ -47,11 +47,15 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
         return countNum;
     }
 
+    
     //餌boxを生成する関数
     public void GenerateFeedBox()//餌boxを生成する関数 引数でanimalObjectの場所を指定
     {
-        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit)//フィールド場の餌boxを数え、減っている数だけ生成する
+        int RoopCount = 0;
+
+        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit && RoopCount <= 1000)//フィールド場の餌boxを数え、減っている数だけ生成する
         {
+            RoopCount++;
 
             GameObject feedBox = Instantiate(
                 feedBoxPrefab, 
@@ -64,6 +68,8 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
                 );
             feedBox.transform.parent = this.gameObject.transform;
         }
+
+        if(RoopCount >= 1000) { Debug.LogWarning("無限ループが発生しています"); }
     }
 
     //エフェクトを生成する関数
