@@ -25,5 +25,8 @@ public class StartButtonGenerator : MonoBehaviour
         GameObject start = Instantiate<GameObject>(
             StartButton, 
             this.gameObject.transform);
+        
+        //スタートボタンをマネージャの子オブジェクトとする
+        start.gameObject.transform.parent = this.gameObject.transform;
     }
 }
