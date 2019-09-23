@@ -5,21 +5,37 @@ using UnityEngine;
 public class GenerateFeedBoxAndEffect : MonoBehaviour
 {
 
-    [SerializeField] private GameObject feedBoxPrefab;//餌boxのオブジェクト
-    [SerializeField] private GameObject[] effectPrefab;//生成するエフェクトオブジェクトを格納する配列
+    [SerializeField, Tooltip("エサボックスのオブジェクト")] private GameObject feedBoxPrefab;
+    [SerializeField, Tooltip("生成するエフェクトオブジェクトを格納する配列")] private GameObject[] effectPrefab;
 
-    public int fieldFeedBoxLimit = 10; //フィールドに生成する餌boxの上限数
+    //生成する動物の生成位置
+    [SerializeField, Tooltip("エサボックスの生成位置のX成分\n(プレーヤを中心として指定した範囲にエサボックスが生成される)")]
+    [Range(0.0f, 5.0f)]
+    private float generatePosRange_x = 1.0f;
+    [SerializeField, Tooltip("エサボックスの生成位置のZ成分\n(プレーヤを中心として指定した範囲にエサボックスが生成される)")]
+    [Range(0.0f, 5.0f)]
+    private float generatePosRange_z = 1.0f;
+
+    [SerializeField, Tooltip("フィールドに生成するエサボックスの上限数")]
+    [Range(0, 10)]
+    private int fieldFeedBoxLimit = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        GenerateFeedBox();
+        
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// ゲームがスタートした かつ フィールド上にエサボックスが一つもない
+    /// </summary>
     void Update()
     {
-        
+        timecontroller time = GameObject.Find("UICanvas").GetComponent<timecontroller>();
+        if (time.isGameStart && CheckFieldObject("feedbox") == 0)
+        {
+            GenerateFeedBox();
+        }
     }
 
     //フィールド場の指定したオブジェクトの数を返す関数
@@ -39,7 +55,11 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
 
             GameObject feedBox = Instantiate(
                 feedBoxPrefab, 
-                new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 0.0f, UnityEngine.Random.Range(-3.0f, 3.0f)), //xy座標はフィールド範囲内でランダムで生成 
+                new Vector3(
+                    UnityEngine.Random.Range(-generatePosRange_x, generatePosRange_x), 
+                    0.0f, 
+                    UnityEngine.Random.Range(-generatePosRange_z, generatePosRange_z)
+                ), //xy座標はフィールド範囲内でランダムで生成 
                 Quaternion.identity
                 );
             feedBox.transform.parent = this.gameObject.transform;

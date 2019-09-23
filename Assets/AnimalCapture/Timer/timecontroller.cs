@@ -14,10 +14,17 @@ public class timecontroller : MonoBehaviour
     public GameObject readyText;//Ready...GO!の表示
     int readyCount = 3;
 
+    //ゲームがスタートしたかどうかを判断するフラグ
+    private bool _isGameStart = false;
+    //上の変数のプロパティ(クラス外では変更不可, 参照は可能)
+    public bool isGameStart{ get; set; }
+
+
     void Update()
     {
         delta += Time.deltaTime;
-        if (GameReady() && second > 0)
+        isGameStart = GameReady();
+        if (isGameStart && second > 0)
         {
             if (delta >= 1.0f)
             {

@@ -27,9 +27,6 @@ public class MyPlaySpaceManager : Singleton<MyPlaySpaceManager>
     /// </summary>
     private void Start()
     {
-        //いちいち設定アタッチするのがめんどくさいため, デフォルトでwireframeにしておく
-        ScaningMaterial = new Material(Shader.Find("wireframe"));
-
         //メッシュ化は終了していないため, 偽にしておく
         meshesProcessed = false;
 
