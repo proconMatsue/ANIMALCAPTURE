@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6edee8afc660ab7489971d7b51b5a1ee
+guid: 66ecbcbaece09b5429c1179e36828dbc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -156,7 +156,6 @@ ModelImporter:
     7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Walk"
     9500000: //RootNode
     13700000: "\u7403.001"
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -209,7 +208,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

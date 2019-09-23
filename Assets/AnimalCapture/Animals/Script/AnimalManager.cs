@@ -82,7 +82,7 @@ public class AnimalManager : MonoBehaviour
             RandomAnimalObject(),
             new Vector3(
                 Random.Range(-generatePosRange_x, generatePosRange_x), 
-                10.0f, 
+                1.0f, 
                 Random.Range(-generatePosRange_z, generatePosRange_z)
             ),
             this.gameObject.transform.rotation);

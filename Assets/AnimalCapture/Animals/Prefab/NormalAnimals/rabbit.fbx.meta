@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3ad4946654c354439e688695858d0ea
+guid: 684ac522d2982c145b27b8e74526e8b4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -38,10 +38,9 @@ ModelImporter:
     100064: Bone.009_R
     100066: Bone.009_R.001
     100068: Bone.009_R.001_end
-    100070: Point
-    100072: //RootNode
-    100074: rabbit
-    100076: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+    100070: //RootNode
+    100072: rabbit
+    100074: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
     400000: Bone
     400002: Bone.001
     400004: Bone.002
@@ -77,18 +76,24 @@ ModelImporter:
     400064: Bone.009_R
     400066: Bone.009_R.001
     400068: Bone.009_R.001_end
-    400070: Point
+    400070: rabbit
     400072: //RootNode
-    400074: rabbit
-    400076: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
-    2100000: Material
+    400074: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+    2100000: body
+    2100002: tail2
+    2100004: tail
+    2100006: mimi
+    2100008: eye
+    2100010: mouse
     4300000: rabbit
     7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Action"
     7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Action.001"
-    7400004: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Wait"
-    7400006: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Walk"
+    7400004: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Action.002"
+    7400006: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Action.003"
+    7400008: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Action.004"
+    7400010: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Wait"
+    7400012: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Walk"
     9500000: //RootNode
-    10800000: Point
     13700000: rabbit
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -143,7 +148,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

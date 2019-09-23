@@ -57,7 +57,7 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
                 feedBoxPrefab, 
                 new Vector3(
                     UnityEngine.Random.Range(-generatePosRange_x, generatePosRange_x), 
-                    0.0f, 
+                    1.0f, 
                     UnityEngine.Random.Range(-generatePosRange_z, generatePosRange_z)
                 ), //xy座標はフィールド範囲内でランダムで生成 
                 Quaternion.identity

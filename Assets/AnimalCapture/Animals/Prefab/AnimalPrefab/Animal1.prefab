@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2500767773067376922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4518591323544745880}
   - {fileID: 3951737980468832644}
@@ -78,8 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cf381527c09d46957cc8ca140da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalObject: {fileID: 4518591323544775608}
-  angerObject: {fileID: 3951737980468868516}
+  animalObject: {fileID: 5546094317980201906, guid: ad56b1d31e4c49546b95bcb73e751648,
+    type: 3}
+  angerObject: {fileID: 8939603632985309541, guid: 63aa8fdcbbe15ec4a951b8998df43361,
+    type: 3}
   animaltype: 1
   point: 5
   hungryRate: 20
@@ -227,12 +229,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aea932f97743dc4390a6b5b07005995, type: 3}
---- !u!1 &3951737980468868516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 6aea932f97743dc4390a6b5b07005995,
-    type: 3}
-  m_PrefabInstance: {fileID: 3951737980468966148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3951737980468832644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6aea932f97743dc4390a6b5b07005995,
@@ -296,12 +292,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b73c10a2e81c06488c363e88c21ba5d, type: 3}
---- !u!1 &4518591323544775608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: 7b73c10a2e81c06488c363e88c21ba5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591323544874270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4518591323544745880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 7b73c10a2e81c06488c363e88c21ba5d,
