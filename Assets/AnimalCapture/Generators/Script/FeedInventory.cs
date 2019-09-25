@@ -20,21 +20,30 @@ public class FeedInventory : MonoBehaviour
     //餌Boxのオブジェクト
     //[SerializeField] private GameObject feedBoxPrefab;
     //プレーヤのオブジェクト
-    [SerializeField] private GameObject cameraPrefab;
+    [SerializeField, Tooltip("カメラオブジェクト\n(プレーヤの座標を得るため)")]
+    private GameObject cameraPrefab;
     
     //餌の種類
-    [SerializeField] public GameObject AornPrefab;
-    [SerializeField] public GameObject PikePrefab;
-    [SerializeField] public GameObject CarrotPrefab;
-    [SerializeField] public GameObject MeatPrefab;
+    [SerializeField, Tooltip("ドングリのオブジェクト")]
+    public GameObject AornPrefab;
+    [SerializeField, Tooltip("秋刀魚のオブジェクト")]
+    public GameObject PikePrefab;
+    [SerializeField, Tooltip("ニンジンのオブジェクト")]
+    public GameObject CarrotPrefab;
+    [SerializeField, Tooltip("肉のオブジェクト")]
+    public GameObject MeatPrefab;
 
-    //餌を射出するときのスピード
-    [SerializeField] private float speed = 300.0f;
-    //餌オブジェクトを破壊するまでにかかる時間
-    [SerializeField] private float DestryTime = 20.0f;
+    [SerializeField, Tooltip("餌を射出するときのスピード")]
+    [Range(0.0f, 500.0f)]
+    private float speed = 300.0f;
 
-    //所持できる餌の数の上限
-    [SerializeField] private int MaxNumberFeed = 5;
+    [SerializeField, Tooltip("射出したエサを破壊するまでにかかる時間")]
+    [Range(0.0f, 60.0f)]
+    private float DestryTime = 20.0f;
+
+    [SerializeField, Tooltip("所持できるエサの数の上限")]
+    [Range(0, 10)]
+    private int MaxNumberFeed = 5;
 
     //生成間隔のインターバルタイム設定用関数
     //[SerializeField] private float intervalTime;
@@ -43,23 +52,11 @@ public class FeedInventory : MonoBehaviour
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
     /// <summary>
-    /// 初期化を行う関数
-    /// </summary>
-    private void Init()
-    {
-        //所有している餌を初期化
-        FeedDictionary.Add(Feeding.Acorn, 0);
-        FeedDictionary.Add(Feeding.Carrot, 0);
-        FeedDictionary.Add(Feeding.Meat, 0);
-        FeedDictionary.Add(Feeding.Pike, 0);
-    }
-
-    /// <summary>
     /// ゲームスタート時に餌を5つプレーヤーに用意
     /// </summary>
     private void Start()
     {
-        Init();
+        FeedInventoryInit();
 
         //最初に持っている餌を取得
         Feeding feedingType;
@@ -68,6 +65,18 @@ public class FeedInventory : MonoBehaviour
             feedingType = GenerateRandamFeeding();
             FeedDictionary[feedingType]++;
         }
+    }
+
+    /// <summary>
+    /// 所持しているエサの初期化を行う関数
+    /// </summary>
+    private void FeedInventoryInit()
+    {
+        //所有している餌を初期化
+        FeedDictionary.Add(Feeding.Acorn, 0);
+        FeedDictionary.Add(Feeding.Carrot, 0);
+        FeedDictionary.Add(Feeding.Meat, 0);
+        FeedDictionary.Add(Feeding.Pike, 0);
     }
 
     /// <summary>

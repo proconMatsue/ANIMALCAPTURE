@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FeedDisplayManager : MonoBehaviour
 {
-    //テキストを表示するためのオブジェクト
-    [SerializeField] private GameObject textObject;
+    [SerializeField, Tooltip("エサの所持数を表示するためのオブジェクト")]
+    private GameObject textObject;
 
-    //餌を管理するマネージャのオブジェクト
-    [SerializeField] private GameObject feedInventoryManager;
+    [SerializeField, Tooltip("エサを管理するマネージャのオブジェクト")]
+    private GameObject feedInventoryManager;
 
     /// <summary>
     /// 毎フレーム餌を表示する

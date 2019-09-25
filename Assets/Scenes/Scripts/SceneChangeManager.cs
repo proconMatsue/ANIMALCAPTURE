@@ -8,9 +8,9 @@ using UnityEngine.Events;
 public class SceneChangeManager : MonoBehaviour
 {
     private UnityEvent OnSelectionCompleted = new UnityEvent();
-    [SerializeField] private string NextScene = "stage01";
-    [SerializeField] private float sceneChangeTime= 0.0f;
-    [SerializeField] private bool useTimer = false;
+    [SerializeField, Tooltip("遷移先のシーン名")] private string NextScene = "stage01";
+    [SerializeField, Tooltip("時間によって画面が遷移するかどうか")] private bool useTimer = false;
+    [SerializeField, Tooltip("画面が遷移するまでの時間")] private float sceneChangeTime = 0.0f;
 
     GameObject gazeCircle;
     GameObject MixedRealityCameraParent;
@@ -48,9 +48,10 @@ public class SceneChangeManager : MonoBehaviour
     /// </summary>
     public void SceneChange()
     {
+        //次のシーンで被ってしまうオブジェクトをシーン直前に削除
         if (MixedRealityCameraParent != null)
         {
-            Destroy(MixedRealityCameraParent);//次のシーンで被ってしまうオブジェクトをシーン直前に削除
+            Destroy(MixedRealityCameraParent);
         }
         if (gazeCircle != null)
         {
@@ -64,6 +65,7 @@ public class SceneChangeManager : MonoBehaviour
         {
             Destroy(SpatialMapping);
         }
+
         SceneManager.LoadScene(NextScene);
         //gazeCircle.SetActive(false);
     }
@@ -72,9 +74,10 @@ public class SceneChangeManager : MonoBehaviour
     {
         if (Time.time - startTime > sceneChangeTime)
         {
+            //次のシーンで被ってしまうオブジェクトをシーン直前に削除
             if (MixedRealityCameraParent != null)
             {
-                Destroy(MixedRealityCameraParent);//次のシーンで被ってしまうオブジェクトをシーン直前に削除
+                Destroy(MixedRealityCameraParent);
             }
             if (gazeCircle != null)
             {

@@ -48,7 +48,7 @@ public class Animal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isHungry);
+        //Debug.Log(isHungry);
         Move();
         if (MeasureDistance() < eatDistance)
         {
@@ -196,6 +196,9 @@ public class Animal : MonoBehaviour
             )
         {
             Destroy(collision.gameObject);
+
+            ResultUIManager resultUIManager = GameObject.Find("ResultUIManager").GetComponent<ResultUIManager>();
+            resultUIManager.Score++;
         }
     }
 }
