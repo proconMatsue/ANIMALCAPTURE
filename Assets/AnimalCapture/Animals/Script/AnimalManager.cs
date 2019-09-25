@@ -41,7 +41,9 @@ public class AnimalManager : MonoBehaviour
     [SerializeField, Tooltip("怒り状態のライオンのプレハブ")] private GameObject lionPrefab_angry;*/
 
     //存在できる動物の数の上限
-    [SerializeField, Tooltip("フィールド上に存在できる動物の数")] private readonly int MaxNumberAnimals = 5;
+    [SerializeField, Tooltip("フィールド上に存在できる動物の数")]
+    [Range(0, 10)]
+    private readonly int MaxNumberAnimals = 5;
 
     //生成する動物の生成位置
     [SerializeField, Tooltip("動物の生成位置のX成分\n(プレーヤを中心として指定した範囲に動物が生成される)")]
@@ -63,8 +65,17 @@ public class AnimalManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        //ゲーム中に動いている timecontrollerスクリプト を取得
         timecontroller time = GameObject.Find("UICanvas").GetComponent<timecontroller>();
-        if (time.isGameStart && Animal.Count == 0)
+        if(time == null) { Debug.LogWarning("UICanvasが正しく見つかっていません."); return; }
+
+        //ゲーム中に動いている MyPlaySpaceManagerスクリプト を取得
+        MyPlaySpaceManager myPlaySpaceManager = GameObject.Find("SpatialProcessing").GetComponent<MyPlaySpaceManager>();
+        if(myPlaySpaceManager == null) { Debug.LogWarning("SpatialProcessingが正しく見つかっていません."); return; }
+
+        if (time.isGameStart                                //ゲームがスタートした 
+            && myPlaySpaceManager.MeshesToPlanesCompleted   //フィールド上が正しく用意された
+            && Animal.Count == 0)                           //フィールド上の動物の数が0体である
         {
             //最初に5匹フィールドに出す
             for (int i = 0; i < MaxNumberAnimals; i++){ generateAnimal(); }

@@ -108,9 +108,9 @@ MonoBehaviour:
   UpNormalThreshold: 0.9
   FloorBuffer: 0.1
   CeilingBuffer: 0.1
-  WallMaterial: {fileID: 2100000, guid: 64165286eff98134b82f4a6081c52d0f, type: 2}
-  FloorMaterial: {fileID: 2100000, guid: 64165286eff98134b82f4a6081c52d0f, type: 2}
-  CeilingMaterial: {fileID: 2100000, guid: 64165286eff98134b82f4a6081c52d0f, type: 2}
+  WallMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  FloorMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  CeilingMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   TableMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   UnknownMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   PlaneType: 16

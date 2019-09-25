@@ -5,8 +5,10 @@ using UnityEngine;
 public class GenerateFeedBoxAndEffect : MonoBehaviour
 {
 
-    [SerializeField, Tooltip("エサボックスのオブジェクト")] private GameObject feedBoxPrefab;
-    [SerializeField, Tooltip("生成するエフェクトオブジェクトを格納する配列")] private GameObject[] effectPrefab;
+    [SerializeField, Tooltip("エサボックスのオブジェクト")]
+    private GameObject feedBoxPrefab;
+    [SerializeField, Tooltip("生成するエフェクトオブジェクトを格納する配列")]
+    private GameObject[] effectPrefab;
 
     //生成する動物の生成位置
     [SerializeField, Tooltip("エサボックスの生成位置のX成分\n(プレーヤを中心として指定した範囲にエサボックスが生成される)")]
@@ -20,19 +22,27 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     [Range(0, 10)]
     private int fieldFeedBoxLimit = 10;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField, Tooltip("エサボックスの大きさ\n(1から何倍するかを表している)")]
+    [Range(0.0f, 1.0f)]
+    private float FeedBoxScale = 1.0f;
 
     /// <summary>
     /// ゲームがスタートした かつ フィールド上にエサボックスが一つもない
     /// </summary>
     void Update()
     {
+        //ゲーム中に動いている timecontrollerスクリプト を取得
         timecontroller time = GameObject.Find("UICanvas").GetComponent<timecontroller>();
-        if (time.isGameStart && CheckFieldObject("feedbox") == 0)
+        if (time == null) { Debug.LogWarning("UICanvasが正しく見つかっていません."); return; }
+
+        //ゲーム中に動いている MyPlaySpaceManagerスクリプト を取得
+        MyPlaySpaceManager myPlaySpaceManager = GameObject.Find("SpatialProcessing").GetComponent<MyPlaySpaceManager>();
+        if (myPlaySpaceManager == null) { Debug.LogWarning("SpatialProcessingが正しく見つかっていません."); return; }
+
+
+        if (time.isGameStart                                //ゲームがスタートした 
+            && myPlaySpaceManager.MeshesToPlanesCompleted   //フィールド上が正しく用意された
+            && CheckFieldObject("feedbox") == 0)            //フィールド上のエサボックスが0個である
         {
             GenerateFeedBox();
         }
@@ -51,9 +61,13 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     //餌boxを生成する関数
     public void GenerateFeedBox()//餌boxを生成する関数 引数でanimalObjectの場所を指定
     {
-        int RoopCount = 0;
+        //無限ループを防ぐための変数
+        int RoopCount = 0;                      //カウント変数
+        int RoopLimit = fieldFeedBoxLimit * 5;  //カウントの上限数
 
-        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit && RoopCount <= 1000)//フィールド場の餌boxを数え、減っている数だけ生成する
+        //フィールド場の餌boxを数え、減っている数だけ生成する
+        //カウント上限数を超えれば終了
+        while (CheckFieldObject("feedbox") < fieldFeedBoxLimit && RoopCount <= RoopLimit)
         {
             RoopCount++;
 
@@ -69,7 +83,8 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
             feedBox.transform.parent = this.gameObject.transform;
         }
 
-        if(RoopCount >= 1000) { Debug.LogWarning("無限ループが発生しています"); }
+        //ループカウントがカウント上限数を超えれば, エラー表示をしておく
+        if(RoopCount >= RoopLimit) { Debug.LogWarning("無限ループが発生しています"); }
     }
 
     //エフェクトを生成する関数

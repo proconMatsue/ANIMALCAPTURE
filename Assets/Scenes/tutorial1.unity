@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpatialMapping
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010302963436, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013298573622, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -732,5 +736,10 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 1989193109}
+    - target: {fileID: 3924476637809039393, guid: 90b719b345c16104f88109a2f0c7a4de,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b719b345c16104f88109a2f0c7a4de, type: 3}

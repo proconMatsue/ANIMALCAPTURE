@@ -10,25 +10,29 @@ using UnityEngine;
 
 public class MyPlaySpaceManager : Singleton<MyPlaySpaceManager>
 {
-    [SerializeField]
-    [Tooltip("壁を作成するまでの時間")]
+    [SerializeField, Tooltip("壁(プレーンオブジェクト)を作成するまでの時間")]
+    [Range(0.0f, 60.0f)]
     private float ScanTime = 30.0f;
 
-    [SerializeField]
-    [Tooltip("スキャン中にメッシュに貼るマテリアル")]
+    [SerializeField, Tooltip("スキャン中にメッシュに貼るマテリアル")]
     private Material ScaningMaterial;
 
 
     //メッシュ化が終了したかどうかを示すフラグ
     private bool meshesProcessed = false;
 
+    //メッシュをプレーンに変換したかどうかを示すフラグ
+    [HideInInspector]
+    public bool MeshesToPlanesCompleted = false;
+
     /// <summary>
     /// このスクリプト開始時に一同だけ呼び出される
     /// </summary>
     private void Start()
     {
-        //メッシュ化は終了していないため, 偽にしておく
+        //各フラグを偽にしておく
         meshesProcessed = false;
+        MeshesToPlanesCompleted = false;
 
         //スキャン中のマテリアルを設定
         SpatialMappingManager.Instance.SetSurfaceMaterial(ScaningMaterial);
@@ -82,6 +86,9 @@ public class MyPlaySpaceManager : Singleton<MyPlaySpaceManager>
 
         //メッシュを消す
         SpatialMappingManager.Instance.DrawVisualMeshes = false;
+
+        //メッシュがプレーンオブジェクトに置き換わったため, フラグを真にする
+        MeshesToPlanesCompleted = true;
     }
 
     /// <summary>
