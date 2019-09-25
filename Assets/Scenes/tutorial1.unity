@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
         type: 3}
       propertyPath: NextScene
-      value: tutorial2Image
+      value: game
       objectReference: {fileID: 0}
     - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
         type: 3}

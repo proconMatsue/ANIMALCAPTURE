@@ -197,8 +197,7 @@ public class Animal : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
-            ResultUIManager resultUIManager = GameObject.Find("ResultUIManager").GetComponent<ResultUIManager>();
-            resultUIManager.Score++;
+            ResultUIManager.Score++;
         }
     }
 }

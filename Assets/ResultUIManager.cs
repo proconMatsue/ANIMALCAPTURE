@@ -13,7 +13,7 @@ public class ResultUIManager : MonoBehaviour
     private GameObject textObject;
 
     private int score = 0;
-    public int Score{ get; set; }
+    public static int Score{ get; set; }
 
     /// <summary>
     /// 結果を出力
