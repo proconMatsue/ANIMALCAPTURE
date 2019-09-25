@@ -163,4 +163,11 @@ public class FeedInventory : MonoBehaviour
             default: Debug.LogWarning("unexpected return."); return Feeding.Unexpect;
         }
     }
+
+    public void IncreaseFeed()//餌boxを拾ったときに持っている餌を増やす関数
+    {
+        FeedDictionary[GenerateRandamFeeding()]++;
+    }
+
+
 }

@@ -184,7 +184,7 @@ public class Animal : MonoBehaviour
     /// <param name="collision">特に気にする必要はない</param>
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision.gameObject.tag : " + collision.gameObject.tag);
+        //Debug.Log("Collision.gameObject.tag : " + collision.gameObject.tag);
         var mytag = this.gameObject.tag;
         var colltag = collision.gameObject.tag;
 

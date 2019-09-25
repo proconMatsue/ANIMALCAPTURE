@@ -80,6 +80,9 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
                 ), //xy座標はフィールド範囲内でランダムで生成 
                 Quaternion.identity
                 );
+
+            feedBox.transform.localScale = new Vector3(FeedBoxScale, FeedBoxScale, FeedBoxScale);
+
             feedBox.transform.parent = this.gameObject.transform;
         }
 
@@ -101,4 +104,14 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     }
 
 
+    public void CallGenerateFeedBox()//餌を取得しbox後,遅らせて新しい餌boxを生成する関数
+    {
+        Invoke("GenerateFeedBox", 3.0f);//3秒後に新しい餌boxを生成
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
