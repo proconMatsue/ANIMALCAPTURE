@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456eda422e1dc4c4cb4fd6c25cbc2fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SphereRadius: 0.01
+  SphereRadius: 1
   MoveSpeed: 100
   useUnscaledTime: 1
   hideOnStart: 0
