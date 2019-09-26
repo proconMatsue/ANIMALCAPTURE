@@ -16,7 +16,7 @@ public class Animal : MonoBehaviour
     public float moveStopTime = 3.0f;   //方向を変えてから動き出すまでの時間
     public float eatDistance = 3.0f;    //エサを与えられるプレイヤーとの距離?
     int maxAnimalType = 4;              //動物の種類の最大数
-    bool isHungry = false;              //おなかがすいているか
+    public bool isHungry = false;              //おなかがすいているか
     float preCheckTime = 0;             //前回方向変更をした時間
     float stopCounts = 0;               //停止してからの時間
     float preHungryCheckTime = 0;       //前回空腹チェックをした時間
@@ -55,13 +55,8 @@ public class Animal : MonoBehaviour
             //頭の上に三角表示
             DisplayTriangle();
         }
-        else
-        {
-            if (isHungry == false)  //おなかがすいていない時おなかがすくかどうかを判定
-            {
-                isHungry = HungryCheck();
-            }
-        }
+        HungryCheck();
+
     }
 
     void StatusInit()
@@ -136,28 +131,42 @@ public class Animal : MonoBehaviour
     }
 
     //おなかがすいたかのチェック（checkTimeの周期）
-    bool HungryCheck()
+    void HungryCheck()
     {
-        if (Time.time - preHungryCheckTime > checkHungryTime)
-        {
-            preHungryCheckTime = Time.time;
-            if (Random.Range(0, 100) < hungryRate)   //ランダムでおなかがすいた状態にする
+        if (isHungry == false) {
+            if (Time.time - preHungryCheckTime > checkHungryTime)
             {
-                animalObject.SetActive(false);
-                angerObject.SetActive(true);
-                return true;
+                preHungryCheckTime = Time.time;
+                if (Random.Range(0, 100) < hungryRate)   //ランダムでおなかがすいた状態にする
+                {
+                    isHungry = true;
+                }
+                else
+                {
+                    isHungry = false;
+                }
             }
+        }
+        if (isHungry)
+        {
+            animalObject.SetActive(false);
+            angerObject.SetActive(true);
+        }
+        else
+        {
             animalObject.SetActive(true);
             angerObject.SetActive(false);
-            return false;
         }
-        return isHungry;
     }
 
     //エサを食べる（得点の獲得とisHungryをfalse）
     public void Eat()
     {
-        isHungry = false;
+        if (isHungry)
+        {
+            isHungry = false;
+            ResultUIManager.Score++;
+        }
     }
 
     //時間切れのとき動物の削除
@@ -196,8 +205,7 @@ public class Animal : MonoBehaviour
             )
         {
             Destroy(collision.gameObject);
-
-            ResultUIManager.Score++;
+            Eat();
         }
     }
 }
