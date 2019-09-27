@@ -74,7 +74,7 @@ public class AnimalManager : MonoBehaviour
         if(myPlaySpaceManager == null) { Debug.LogWarning("SpatialProcessingが正しく見つかっていません."); return; }
 
         if (time.isGameStart                                //ゲームがスタートした 
-            && myPlaySpaceManager.MeshesToPlanesCompleted   //フィールド上が正しく用意された
+            //&& myPlaySpaceManager.MeshesToPlanesCompleted   //フィールド上が正しく用意された
             && Animal.Count == 0)                           //フィールド上の動物の数が0体である
         {
             //最初に5匹フィールドに出す

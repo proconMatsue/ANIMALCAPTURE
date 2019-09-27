@@ -42,7 +42,7 @@ public class timecontroller : MonoBehaviour
         {
             if (TimeUp())
             {
-                GameObject.Find("SceneChangeManager").GetComponent<SceneChangeManager>().SceneChange();
+                GameObject.Find("UICanvas/SceneChangeManager").GetComponent<SceneChangeManager>().SceneChange();
                 //SceneManager.LoadScene("finish");
             }
         }

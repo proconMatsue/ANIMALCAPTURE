@@ -109,24 +109,42 @@ public class FeedInventory : MonoBehaviour
     public void Feeing()
     {
         Feeding animalFeed = AnimalTable(GazeManager.Instance.HitObject);
+
         Debug.Log("animalFeed : " + animalFeed);
+        // Debug.Log(GazeManager.Instance.HitObject.GetComponent<Animal>().isHungry);
+        if (GazeManager.Instance.HitObject.GetComponent<Animal>().isHungry) {
+            if (FeedDictionary[animalFeed] <= 0)
+            {
+                //餌を持ってかったときの処理を書く
+            }
+            else
+            {
 
-        if (FeedDictionary[animalFeed] <= 0)
-        {
-            //餌を持ってかったときの処理を書く
-        }
-        else
-        {
-            
-            GameObject feedInstance = Instantiate<GameObject>(
-                FeedTable(animalFeed), cameraPrefab.transform.position, cameraPrefab.transform.rotation);
-            //投げるゲームオブジェクトはリスとから消しておく
-            FeedDictionary[animalFeed]--;
+                GameObject feedInstance = Instantiate<GameObject>(
+                    FeedTable(animalFeed), cameraPrefab.transform.position, cameraPrefab.transform.rotation);
+                //投げるゲームオブジェクトはリスとから消しておく
+                if (animalFeed == Feeding.Acorn) {
+                    feedInstance.tag = "acorn";
+                }
+                if (animalFeed == Feeding.Pike)
+                {
+                    feedInstance.tag = "pike";
+                }
+                if (animalFeed == Feeding.Carrot)
+                {
+                    feedInstance.tag = "carrot";
+                }
+                if (animalFeed == Feeding.Meat)
+                {
+                    feedInstance.tag = "meat";
+                }
+                FeedDictionary[animalFeed]--;
 
-            feedInstance.GetComponent<Rigidbody>().AddForce(feedInstance.transform.forward * speed);
+                feedInstance.GetComponent<Rigidbody>().AddForce(feedInstance.transform.forward * speed);
 
-            //一定時間フィールド上に存在する餌オブジェクトは削除するようにする.
-            Destroy(feedInstance, DestryTime);
+                //一定時間フィールド上に存在する餌オブジェクトは削除するようにする.
+                Destroy(feedInstance, DestryTime);
+            }
         }
     }
 

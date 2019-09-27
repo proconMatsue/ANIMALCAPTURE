@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -452,6 +452,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &943502304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1448392392837283094, guid: 0809b0b2e6600ab458b864a151c11c4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553004708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &957997219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4662516307601574989, guid: 40b8464970acb2d4e874980c6f55cd10,
@@ -745,12 +751,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1176509107}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1385565187 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1448392393311253980, guid: 0809b0b2e6600ab458b864a151c11c4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1553004708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1505747637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,6 +812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557166060664710523, guid: 0809b0b2e6600ab458b864a151c11c4d,
+        type: 3}
+      propertyPath: m_Text
+      value: Time 03:00
       objectReference: {fileID: 0}
     - target: {fileID: 4557166060281580458, guid: 0809b0b2e6600ab458b864a151c11c4d,
         type: 3}
@@ -941,12 +946,12 @@ PrefabInstance:
     - target: {fileID: 4557166060664710520, guid: 0809b0b2e6600ab458b864a151c11c4d,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4557166060664710520, guid: 0809b0b2e6600ab458b864a151c11c4d,
         type: 3}
       propertyPath: second
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0809b0b2e6600ab458b864a151c11c4d, type: 3}
@@ -1118,7 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 471342195}
   second: 180
-  timeUpText: {fileID: 1385565187}
+  timeUpText: {fileID: 943502304}
   readyText: {fileID: 1160956616}
 --- !u!1001 &3889536200940001844
 PrefabInstance:
@@ -1338,6 +1343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DebugUIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705032429736205436, guid: 1e0719366db663542a6158c7c26fc8a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6705032429736205439, guid: 1e0719366db663542a6158c7c26fc8a1,
         type: 3}

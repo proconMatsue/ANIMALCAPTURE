@@ -23,10 +23,10 @@ public class Animal : MonoBehaviour
     float rotateY = 0;
     int direction = 0;                  //動物の向き
     //  key:animaltype values:{point, hungryRate, checkHungryTime, checkTime, moveSpeed, maxSpeed, moveStopTime}
-    Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 10.0f, 5.0f, 10.0f, 10.0f, 3.0f}},
-                                                                            { 1, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
-                                                                            { 2, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}},
-                                                                            { 3, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 30.0f, 3.0f}}};
+    Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 10.0f, 5.0f, 8.0f, 1.5f, 3.5f}},
+                                                                            { 1, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 1.5f, 3.5f}},
+                                                                            { 2, new List<float> { 5, 50, 10.0f, 5.0f, 8.0f, 1.5f, 3.5f}},
+                                                                            { 3, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 1.5f, 3.5f}}};
     enum parameter
     {
         point,
@@ -73,6 +73,21 @@ public class Animal : MonoBehaviour
         }
         isHungry = false;           //おなかがすいているか
         preCheckTime = 0;
+        if (animaltype == (int)AnimalManager.Animals.Squirrel) {
+            this.gameObject.tag = "squirrel";
+        }
+        if (animaltype == (int)AnimalManager.Animals.Cat)
+        {
+            this.gameObject.tag = "cat";
+        }
+        if (animaltype == (int)AnimalManager.Animals.Rabbit)
+        {
+            this.gameObject.tag = "rabbit";
+        }
+        if (animaltype == (int)AnimalManager.Animals.Lion)
+        {
+            this.gameObject.tag = "lion";
+        }
     }
 
     //動物の移動
@@ -133,10 +148,11 @@ public class Animal : MonoBehaviour
     //おなかがすいたかのチェック（checkTimeの周期）
     void HungryCheck()
     {
-        if (isHungry == false) {
-            if (Time.time - preHungryCheckTime > checkHungryTime)
+        if (Time.time - preHungryCheckTime > checkHungryTime)
+        {
+            preHungryCheckTime = Time.time;
+            if (isHungry == false)
             {
-                preHungryCheckTime = Time.time;
                 if (Random.Range(0, 100) < hungryRate)   //ランダムでおなかがすいた状態にする
                 {
                     isHungry = true;
@@ -201,7 +217,7 @@ public class Animal : MonoBehaviour
             (mytag == "cat" && colltag == "pike") ||
             (mytag == "squirrel" && colltag == "acorn") ||
             (mytag == "lion" && colltag == "meat") ||
-            (mytag == "" && colltag == "meat")
+            (mytag == "rabbit" && colltag == "carrot")
             )
         {
             Destroy(collision.gameObject);
