@@ -43,15 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f6c13bb14ef974092cdcdcaf97969b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squirrelPrefab_normal: {fileID: 380027751529315141, guid: e3f95419e980e19428ba41c54734fc29,
+  squirrelPrefab_normal: {fileID: 100068, guid: b5af4792d96bf4c4f897cac32aaae209,
     type: 3}
-  catPrefab_normal: {fileID: 1837058609358483791, guid: 04b7580af0c329444a669fd1ebd65217,
-    type: 3}
-  rabbitPrefab_normal: {fileID: 6510677789388729598, guid: ad56b1d31e4c49546b95bcb73e751648,
-    type: 3}
-  lionPrefab_normal: {fileID: 1613329091641700877, guid: e847c101936ee22408cb3bb57c2402e8,
-    type: 3}
-  squirrelPrefab_angry: {fileID: 0}
-  catPrefab_angry: {fileID: 0}
-  rabbitPrefab_angry: {fileID: 0}
-  lionPrefab_angry: {fileID: 0}
+  catPrefab_normal: {fileID: 100140, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
+  rabbitPrefab_normal: {fileID: 100070, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
+  lionPrefab_normal: {fileID: 100136, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
+  generatePosRange_x: 1
+  generatePosRange_z: 1
+  AnimalScale: 0.1
