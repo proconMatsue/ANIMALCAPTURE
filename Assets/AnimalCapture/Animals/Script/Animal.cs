@@ -10,7 +10,7 @@ public class Animal : MonoBehaviour
     public float point = 5;             //エサを与えたときのポイント?
     public float hungryRate = 20;       //空腹になる確率
     public float checkHungryTime = 30.0f;//空腹になるかの確認のタイミング
-    public float checkTime = 3.0f;     //方向転換のタイミング
+    public float checkTime = 3.0f;     //方向転換のタイミング(前回の方向決定をした時間からcheckTime秒なので，実際に進むのは(checkTime-moveStopTime)秒の間になる
     public float moveSpeed = 5.0f;      //移動速度
     public float maxSpeed = 30.0f;      //最高速度
     public float moveStopTime = 3.0f;   //方向を変えてから動き出すまでの時間
@@ -23,10 +23,11 @@ public class Animal : MonoBehaviour
     float rotateY = 0;
     int direction = 0;                  //動物の向き
     //  key:animaltype values:{point, hungryRate, checkHungryTime, checkTime, moveSpeed, maxSpeed, moveStopTime}
-    Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 10.0f, 5.0f, 8.0f, 1.5f, 3.5f}},
-                                                                            { 1, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 1.5f, 3.5f}},
-                                                                            { 2, new List<float> { 5, 50, 10.0f, 5.0f, 8.0f, 1.5f, 3.5f}},
-                                                                            { 3, new List<float> { 5, 50, 10.0f, 5.0f, 15.0f, 1.5f, 3.5f}}};
+    //  animalType 0:リス 1:猫 2:ウサギ 3:ライオン
+    Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 6.0f, 4.5f, 8.0f, 1.5f, 3.5f}},
+                                                                            { 1, new List<float> { 5, 50, 6.0f, 5.0f, 15.0f, 1.5f, 3.5f}},
+                                                                            { 2, new List<float> { 5, 50, 6.0f, 5.5f, 8.0f, 1.5f, 3.5f}},
+                                                                            { 3, new List<float> { 5, 50, 6.0f, 6.0f, 15.0f, 1.5f, 3.5f}}};
     enum parameter
     {
         point,
@@ -72,7 +73,7 @@ public class Animal : MonoBehaviour
             moveStopTime = data[animaltype][(int)parameter.moveStopTime];       //動き出すまでの時間
         }
         isHungry = false;           //おなかがすいているか
-        preCheckTime = 0;
+        preCheckTime = Time.time + Random.Range(-0.5f, 0.5f);//方向転換のタイミングにばらつきを作る
         if (animaltype == (int)AnimalManager.Animals.Squirrel) {
             this.gameObject.tag = "squirrel";
         }
@@ -106,7 +107,7 @@ public class Animal : MonoBehaviour
             {
                 stopCounts = Time.time;
             }
-            preCheckTime = Time.time;
+            preCheckTime = Time.time + Random.Range(-0.5f, 0.5f);//方向転換のタイミングにばらつきを作る
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
 
