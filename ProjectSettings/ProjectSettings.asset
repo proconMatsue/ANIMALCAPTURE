@@ -524,7 +524,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 00c38bce3b92d601
+  metroCertificateNotAfter: 804c9d5f0e9bd601
   metroApplicationDescription: ANIMAL CAPTURE
   wsaImages: {}
   metroTileShortName: 

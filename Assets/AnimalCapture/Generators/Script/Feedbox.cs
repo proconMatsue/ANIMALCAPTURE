@@ -9,6 +9,7 @@ public class Feedbox : MonoBehaviour
 {
     private GameObject FeedBoxManager;
     private GameObject FeedInventoryManager;
+    private GameObject FeedBoxGetSE;
 
     /// <summary>
     /// スクリプトを呼び出すためにFeedBoxManagerオブジェクトを取得
@@ -17,6 +18,7 @@ public class Feedbox : MonoBehaviour
     {
         FeedBoxManager = GameObject.Find("FeedBoxManager");
         FeedInventoryManager = GameObject.Find("FeedInventoryManager");
+        FeedBoxGetSE = GameObject.Find("FeedBoxGetSE");
     }
 
 
@@ -27,6 +29,7 @@ public class Feedbox : MonoBehaviour
             //Debug.Log("trigger");
             FeedBoxManager.GetComponent<GenerateFeedBoxAndEffect>().CallGenerateFeedBox();//遅れて餌を生成する
             FeedInventoryManager.GetComponent<FeedInventory>().IncreaseFeed();//ランダムに餌の所持数を増やす
+            FeedBoxGetSE.GetComponent<FeedBoxGetSE>().FeedBoxGetPlay();//餌取得時のSEを鳴らす
             Destroy(this.gameObject);//自分自身をDestory
         }
     }
