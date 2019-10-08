@@ -152,8 +152,9 @@ ModelImporter:
     2100008: nose
     2100010: eye
     4300000: "\u7403.001"
-    7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Wait"
-    7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Walk"
+    7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|happy"
+    7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Wait"
+    7400004: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Walk"
     9500000: //RootNode
     13700000: "\u7403.001"
   externalObjects: {}

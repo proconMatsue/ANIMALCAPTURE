@@ -115,8 +115,9 @@ ModelImporter:
     2100010: nose
     2100012: eye
     4300000: "\u7ACB\u65B9\u4F53"
-    7400000: metarig|squirrel_waiting
-    7400002: metarig|squirrel_walk
+    7400000: metarig|squirrel_happy
+    7400002: metarig|squirrel_waiting
+    7400004: metarig|squirrel_walk
     9500000: //RootNode
     13700000: "\u7ACB\u65B9\u4F53"
     2186277476908879412: ImportLogs
