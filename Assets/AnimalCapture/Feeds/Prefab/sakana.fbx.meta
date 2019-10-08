@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 88433be90094fd949ad898c825041776
+guid: f3ebfc433f5be1041b56e00db1b62113
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: hako
-    2100002: huta
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
-    2186277476908879412: ImportLogs
+    100000: Camera
+    100002: Cylinder
+    100004: Lamp
+    100006: //RootNode
+    400000: Camera
+    400002: Cylinder
+    400004: Lamp
+    400006: //RootNode
+    2000000: Camera
+    2100000: Material.005
+    2100002: Material.003
+    2100004: Material.001
+    2100006: Material.002
+    2300000: Cylinder
+    3300000: Cylinder
+    4300000: Cylinder
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1

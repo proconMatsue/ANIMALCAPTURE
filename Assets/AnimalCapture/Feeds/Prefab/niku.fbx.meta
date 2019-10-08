@@ -1,30 +1,16 @@
 fileFormatVersion: 2
-guid: 22572e0d1b7e93945b1a95906d9b3fee
+guid: 53023ae503257d24192b3be23f202d86
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cylinder
-    100002: eye
-    100004: eye.001
-    100006: //RootNode
-    400000: Cylinder
-    400002: eye
-    400004: eye.001
-    400006: //RootNode
-    2100000: Material.001
-    2100002: Material.002
-    2100004: Material.005
-    2100006: Material.003
-    2300000: Cylinder
-    2300002: eye
-    2300004: eye.001
-    3300000: Cylinder
-    3300002: eye
-    3300004: eye.001
-    4300000: eye.001
-    4300002: eye
-    4300004: Cylinder
-    2186277476908879412: ImportLogs
+    100000: //RootNode
+    400000: //RootNode
+    2100000: niku
+    2100002: niku.001
+    2100004: bone
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Sphere
   externalObjects: {}
   materials:
     importMaterials: 1

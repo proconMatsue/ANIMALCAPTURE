@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1553444564452080067}
   - component: {fileID: 2527829556688041267}
   - component: {fileID: 6485071248281129069}
-  - component: {fileID: 7371112690300478503}
-  - component: {fileID: 373457754297370409}
+  - component: {fileID: 6983174433050645575}
+  - component: {fileID: 7876232033086996146}
   m_Layer: 0
   m_Name: carrot
-  m_TagString: carrot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2804313564926022978}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: -0.05, y: -0.05, z: -0.05}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2804313564926022978}
-  m_Mesh: {fileID: 4300000, guid: cc91e59fd406fea47a9b83837f808350, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0602bf26067eef140aa6fbf3d8aa828e, type: 3}
 --- !u!23 &6485071248281129069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cc91e59fd406fea47a9b83837f808350, type: 3}
-  - {fileID: 2100002, guid: cc91e59fd406fea47a9b83837f808350, type: 3}
+  - {fileID: 2100000, guid: 0602bf26067eef140aa6fbf3d8aa828e, type: 3}
+  - {fileID: 2100002, guid: 0602bf26067eef140aa6fbf3d8aa828e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7371112690300478503
+--- !u!136 &6983174433050645575
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,11 +90,11 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 5
-  m_Direction: 2
-  m_Center: {x: 0.1547837, y: 0.014397291, z: -2.562515}
---- !u!54 &373457754297370409
+  m_Radius: 0.024790619
+  m_Height: 0.018829579
+  m_Direction: 1
+  m_Center: {x: 0.0015478367, y: 0.00014397314, z: -0.02562515}
+--- !u!54 &7876232033086996146
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

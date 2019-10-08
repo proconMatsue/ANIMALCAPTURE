@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 4557166060664710523}
-  second: 180
+  second: 120
   timeUpText: {fileID: 1448392392837283094}
   readyText: {fileID: 1448392393851856286}
 --- !u!1001 &4557166061813644914

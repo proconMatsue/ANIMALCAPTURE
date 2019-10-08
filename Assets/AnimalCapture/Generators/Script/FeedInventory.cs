@@ -51,6 +51,10 @@ public class FeedInventory : MonoBehaviour
     //所持している餌の数(key: 餌の種類, value: 餌の数)
     private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
 
+    //SEを鳴らすため
+    private GameObject FeedingSE;
+
+
     /// <summary>
     /// ゲームスタート時に餌を5つプレーヤーに用意
     /// </summary>
@@ -65,6 +69,9 @@ public class FeedInventory : MonoBehaviour
             feedingType = GenerateRandamFeeding();
             FeedDictionary[feedingType]++;
         }
+
+        //スクリプトを呼び出すためにFeedingSEオブジェクトを取得
+        FeedingSE = GameObject.Find("FeedingSE");
     }
 
     /// <summary>
@@ -119,6 +126,8 @@ public class FeedInventory : MonoBehaviour
             }
             else
             {
+                //餌を投げるときのSEを鳴らす
+                FeedingSE.GetComponent<FeedingSE>().FeedingPlay();
 
                 GameObject feedInstance = Instantiate<GameObject>(
                     FeedTable(animalFeed), cameraPrefab.transform.position, cameraPrefab.transform.rotation);

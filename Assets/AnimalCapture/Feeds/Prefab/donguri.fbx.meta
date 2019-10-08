@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: cc91e59fd406fea47a9b83837f808350
+guid: dccea5a45e60538439d4b3cbcc9e80c4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: "\u7403"
+    100004: "\u7403.001"
     400000: //RootNode
-    2100000: hontai
-    2100002: happa
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cone
-    2186277476908879412: ImportLogs
+    400002: "\u7403"
+    400004: "\u7403.001"
+    2100000: donguri_head
+    2100002: donguri_body
+    2300000: "\u7403"
+    2300002: "\u7403.001"
+    3300000: "\u7403"
+    3300002: "\u7403.001"
+    4300000: "\u7403.001"
+    4300002: "\u7403"
   externalObjects: {}
   materials:
     importMaterials: 1

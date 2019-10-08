@@ -1,23 +1,15 @@
 fileFormatVersion: 2
-guid: d96099bd72565d744b901880f82c8386
+guid: 0602bf26067eef140aa6fbf3d8aa828e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cylinder
-    100002: //RootNode
-    100004: Sphere
-    400000: Cylinder
-    400002: //RootNode
-    400004: Sphere
-    2100000: niku
-    2100002: bone
-    2300000: Cylinder
-    2300002: Sphere
-    3300000: Cylinder
-    3300002: Sphere
-    4300000: Sphere
-    4300002: Cylinder
-    2186277476908879412: ImportLogs
+    100000: //RootNode
+    400000: //RootNode
+    2100000: hontai
+    2100002: happa
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cone
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -23,8 +23,8 @@ public class GenerateFeedBoxAndEffect : MonoBehaviour
     private int fieldFeedBoxLimit = 10;
 
     [SerializeField, Tooltip("エサボックスの大きさ\n(1から何倍するかを表している)")]
-    [Range(0.0f, 1.0f)]
-    private float FeedBoxScale = 1.0f;
+    [Range(0.0f, 10.0f)]
+    private float FeedBoxScale = 10.0f;
 
     /// <summary>
     /// ゲームがスタートした かつ フィールド上にエサボックスが一つもない

@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - feedbox
+  - squirrel
+  - cat
+  - rabbit
+  - lion
+  - carrot
+  - meat
+  - pike
+  - acorn
   layers:
   - Default
   - TransparentFX
