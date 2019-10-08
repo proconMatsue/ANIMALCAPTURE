@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class timecontroller : MonoBehaviour
 {
@@ -19,33 +16,46 @@ public class timecontroller : MonoBehaviour
     //上の変数のプロパティ(クラス外では変更不可, 参照は可能)
     public bool isGameStart{ get; set; }
 
+    //MyPlaySpaceManager myPlaySpaceManager;
+
+    /*private void Start()
+    {
+       // myPlaySpaceManager = GameObject.Find("SpatialProcessing").GetComponent<MyPlaySpaceManager>();
+    }*/
 
     void Update()
     {
-        delta += Time.deltaTime;
-        isGameStart = GameReady();
-        if (isGameStart && second > 0)
-        {
-            if (delta >= 1.0f)
+        //if (myPlaySpaceManager.MeshesToPlanesCompleted)
+        //{
+            delta += Time.deltaTime;
+            isGameStart = GameReady();
+            if (isGameStart && second > 0)
             {
-                second--;
-                if (second % 60 >= 10)
-                    this.time.text = "TIME:" + second / 60 + ":" + second % 60;
-                else
-                    this.time.text = "TIME:" + second / 60 + ":0" + second % 60;
+                if (delta >= 1.0f)
+                {
+                    second--;
+                    if (second % 60 >= 10)
+                        this.time.text = "TIME:" + second / 60 + ":" + second % 60;
+                    else
+                        this.time.text = "TIME:" + second / 60 + ":0" + second % 60;
 
-                delta = 0.0f;
+                    delta = 0.0f;
+                }
             }
-        }
-        //0になったらタイムアップのシーンへ
-        if (second == 0)
-        {
-            if (TimeUp())
+            //0になったらタイムアップのシーンへ
+            if (second == 0)
             {
-                GameObject.Find("UICanvas/SceneChangeManager").GetComponent<SceneChangeManager>().SceneChange();
-                //SceneManager.LoadScene("finish");
+                if (TimeUp())
+                {
+                    GameObject.Find("UICanvas/SceneChangeManager").GetComponent<SceneChangeManager>().SceneChange();
+                    //SceneManager.LoadScene("finish");
+                }
             }
-        }
+        //}
+        //else
+        //{
+        //    readyText.GetComponent<Text>().text = "Please Wait!";
+        //}
     }
 
     bool GameReady()//ゲーム開始前はfalse、開始後はtrueを返す
@@ -94,5 +104,5 @@ public class timecontroller : MonoBehaviour
         {
             return false;
         }
-    }    
+    }   
 }
