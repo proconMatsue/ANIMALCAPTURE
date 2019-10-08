@@ -16,17 +16,17 @@ public class timecontroller : MonoBehaviour
     //上の変数のプロパティ(クラス外では変更不可, 参照は可能)
     public bool isGameStart{ get; set; }
 
-    //MyPlaySpaceManager myPlaySpaceManager;
+    MyPlaySpaceManager myPlaySpaceManager;
 
-    /*private void Start()
+    private void Start()
     {
-       // myPlaySpaceManager = GameObject.Find("SpatialProcessing").GetComponent<MyPlaySpaceManager>();
-    }*/
+        myPlaySpaceManager = GameObject.Find("SpatialProcessing").GetComponent<MyPlaySpaceManager>();
+    }
 
     void Update()
     {
-        //if (myPlaySpaceManager.MeshesToPlanesCompleted)
-        //{
+        if (myPlaySpaceManager.MeshesToPlanesCompleted)
+        {
             delta += Time.deltaTime;
             isGameStart = GameReady();
             if (isGameStart && second > 0)
@@ -51,14 +51,14 @@ public class timecontroller : MonoBehaviour
                     //SceneManager.LoadScene("finish");
                 }
             }
-        //}
-        //else
-        //{
-        //    readyText.GetComponent<Text>().text = "Please Wait!";
-        //}
+        }
+        else
+        {
+            readyText.GetComponent<Text>().text = "Please Wait!";
+        }
     }
 
-    bool GameReady()//ゲーム開始前はfalse、開始後はtrueを返す
+        bool GameReady()//ゲーム開始前はfalse、開始後はtrueを返す
     {
         if(delta >= 1.0f && readyCount > 0)
         {
