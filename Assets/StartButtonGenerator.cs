@@ -5,7 +5,7 @@ using UnityEngine;
 public class StartButtonGenerator : MonoBehaviour
 {
     [SerializeField, Tooltip("スタートボタンのオブジェクト")]
-    private GameObject StartButton;
+    private List<GameObject> StartButton;
 
     [SerializeField, Tooltip("プレーヤとスタートボタンとの距離")]
     [Range(0.0f, 5.0f)]
@@ -16,17 +16,20 @@ public class StartButtonGenerator : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        //スタートボタン生成関数
-        generateStartButton();
+        for (int i = 0; i < StartButton.Count; i++)
+        {
+            //スタートボタン生成関数
+            generateStartButton(i);
+        }
     }
 
     /// <summary>
     /// ただ, スタートボタンを生み出すだけの関数
     /// </summary>
-    public void generateStartButton()
+    public void generateStartButton(int i)
     {
         GameObject start = Instantiate<GameObject>(
-            StartButton, 
+            StartButton[i], 
             this.gameObject.transform);
 
         //生成場所を原点にする
