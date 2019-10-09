@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3823852327267641262}
   - component: {fileID: 5178170603446970904}
   - component: {fileID: 1407941009351928938}
-  - component: {fileID: 7034297731438088192}
+  - component: {fileID: 3970794696062123979}
   m_Layer: 0
   m_Name: Animal1
   m_TagString: cat
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9191987193851646117}
-  - {fileID: 6951485155375549636}
+  - {fileID: 6951485155375549662}
   - {fileID: 8576631582180775398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,24 +91,25 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
---- !u!111 &7034297731438088192
-Animation:
+--- !u!95 &3970794696062123979
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7262701492179401560}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400002, guid: 20dabf45c75e60e4e86d4ce67faebcd2, type: 3}
-  - {fileID: 7400000, guid: 20dabf45c75e60e4e86d4ce67faebcd2, type: 3}
-  - {fileID: 7400000, guid: dd02bd7218ef64d49b5d619d4a6daf74, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
+  m_Controller: {fileID: 9100000, guid: fd61ad79e1e13664eb04032741c109f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7274639170007046657
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -227,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -241,15 +246,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400050, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
+    - target: {fileID: 400016, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b14107dd4e01d447a7aa0a84c9b475a, type: 3}
---- !u!4 &6951485155375549636 stripped
+--- !u!4 &6951485155375549662 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400050, guid: 1b14107dd4e01d447a7aa0a84c9b475a,
+  m_CorrespondingSourceObject: {fileID: 400040, guid: 1b14107dd4e01d447a7aa0a84c9b475a,
     type: 3}
   m_PrefabInstance: {fileID: 6951485155375158902}
   m_PrefabAsset: {fileID: 0}

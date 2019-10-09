@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1778481172806726757}
   - component: {fileID: 1778481172806726756}
   - component: {fileID: 1778481172806726759}
-  - component: {fileID: 1796232543042119788}
+  - component: {fileID: 3701321156118165432}
   m_Layer: 0
   m_Name: Animal0
   m_TagString: squirrel
@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1564723839791763158}
+  - {fileID: 1564723839791763104}
   - {fileID: 8666850281760175419}
   - {fileID: 8520398023043269386}
   m_Father: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
---- !u!95 &1796232543042119788
+--- !u!95 &3701321156118165432
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -99,8 +99,8 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778481172806726758}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: cf2ba7decb904ab4f8987e4593714e9c, type: 3}
   m_Controller: {fileID: 9100000, guid: a902d90ef65c9df419888a8eb9087322, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -254,17 +254,37 @@ PrefabInstance:
       propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400052, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400024, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5af4792d96bf4c4f897cac32aaae209, type: 3}
---- !u!1 &1564723839791272694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100068, guid: b5af4792d96bf4c4f897cac32aaae209,
+--- !u!4 &1564723839791763104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400050, guid: b5af4792d96bf4c4f897cac32aaae209,
     type: 3}
   m_PrefabInstance: {fileID: 1564723839791371282}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1564723839791763158 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400068, guid: b5af4792d96bf4c4f897cac32aaae209,
+--- !u!1 &1564723839791272694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100068, guid: b5af4792d96bf4c4f897cac32aaae209,
     type: 3}
   m_PrefabInstance: {fileID: 1564723839791371282}
   m_PrefabAsset: {fileID: 0}

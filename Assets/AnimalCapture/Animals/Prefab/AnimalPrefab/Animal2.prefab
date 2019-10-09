@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2500767773067376935}
   - component: {fileID: 2500767773067376932}
   - component: {fileID: 2500767773067376933}
-  - component: {fileID: 8940943230888594602}
+  - component: {fileID: 8796397021032754042}
   m_Layer: 0
   m_Name: Animal2
   m_TagString: rabbit
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7600604961647398202}
-  - {fileID: 3159598367360463270}
+  - {fileID: 3159598367360463320}
   - {fileID: 4718555277618894284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cf381527c09d46957cc8ca140da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalObject: {fileID: 3159598367360363912}
+  animalObject: {fileID: 100054, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
   angerObject: {fileID: 4718555277618792940}
   animaltype: 2
   point: 5
@@ -91,24 +91,25 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
---- !u!111 &8940943230888594602
-Animation:
+--- !u!95 &8796397021032754042
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2500767773067376922}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400010, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
-  - {fileID: 7400008, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
-  - {fileID: 7400006, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 240748fe16c996d48a06e724b4a129e3, type: 3}
+  m_Controller: {fileID: 9100000, guid: 71c156a225aca8a4abd2315ccd29f327, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2782138723020232497
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,17 +246,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400054, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
---- !u!1 &3159598367360363912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100070, guid: 684ac522d2982c145b27b8e74526e8b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 3159598367360330606}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3159598367360463270 stripped
+--- !u!4 &3159598367360463320 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400072, guid: 684ac522d2982c145b27b8e74526e8b4,
+  m_CorrespondingSourceObject: {fileID: 400054, guid: 684ac522d2982c145b27b8e74526e8b4,
     type: 3}
   m_PrefabInstance: {fileID: 3159598367360330606}
   m_PrefabAsset: {fileID: 0}

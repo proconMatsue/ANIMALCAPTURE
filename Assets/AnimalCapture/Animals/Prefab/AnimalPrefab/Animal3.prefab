@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2441329405239276316}
   - component: {fileID: 5779133472345621553}
   - component: {fileID: 842234800778965551}
-  - component: {fileID: 2392726280507509352}
+  - component: {fileID: 1762052514625680414}
   m_Layer: 0
   m_Name: Animal3
   m_TagString: lion
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 654615782862773902}
-  - {fileID: 543701128970058326}
+  - {fileID: 543701128970058680}
   - {fileID: 2783336419466560732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9cf381527c09d46957cc8ca140da8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalObject: {fileID: 543701128969889398}
+  animalObject: {fileID: 4998802981592371996, guid: e847c101936ee22408cb3bb57c2402e8,
+    type: 3}
   angerObject: {fileID: 2783336419466270972}
   animaltype: 3
   point: 5
@@ -91,24 +92,25 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
---- !u!111 &2392726280507509352
-Animation:
+--- !u!95 &1762052514625680414
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331621269192344812}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400004, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
-  - {fileID: 7400002, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
-  - {fileID: 7400000, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 87d341f5f3161b4489cb2cb590c48628, type: 3}
+  m_Controller: {fileID: 9100000, guid: ead7ca0742a4b3649995fa80e84765fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7429871995357500196
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,17 +243,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400102, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
---- !u!1 &543701128969889398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100136, guid: 66ecbcbaece09b5429c1179e36828dbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 543701128969920862}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &543701128970058326 stripped
+--- !u!4 &543701128970058680 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400136, guid: 66ecbcbaece09b5429c1179e36828dbc,
+  m_CorrespondingSourceObject: {fileID: 400102, guid: 66ecbcbaece09b5429c1179e36828dbc,
     type: 3}
   m_PrefabInstance: {fileID: 543701128969920862}
   m_PrefabAsset: {fileID: 0}

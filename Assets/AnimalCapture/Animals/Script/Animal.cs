@@ -52,24 +52,24 @@ public class Animal : MonoBehaviour
         switch (this.gameObject.tag)
         {
             case "squirrel":
-                dic[(int)anime_motion.walk] = "metaring|squirrel_walk";
-                dic[(int)anime_motion.wait] = "metaring|squirrel_waiting";
-                dic[(int)anime_motion.happy] = "metaring|squirrel_happy";
+                dic[(int)anime_motion.walk] = "squirrel_walk";
+                dic[(int)anime_motion.wait] = "squirrel_waiting.001";
+                dic[(int)anime_motion.happy] = "squirrel_happy.001";
                 break;
             case "cat":
-                dic[(int)anime_motion.walk] = "Armature|walk";
-                dic[(int)anime_motion.wait] = "Armature|wait";
-                dic[(int)anime_motion.happy] = "Armature|wait";
+                dic[(int)anime_motion.walk] = "walk";
+                dic[(int)anime_motion.wait] = "wait";
+                dic[(int)anime_motion.happy] = "happy.001";
                 break;
             case "rabbit":
-                dic[(int)anime_motion.walk] = "アーマチュア|Walk";
-                dic[(int)anime_motion.wait] = "アーマチュア|Wait";
-                dic[(int)anime_motion.happy] = "アーマチュア|happy";
+                dic[(int)anime_motion.walk] = "Walk.001";
+                dic[(int)anime_motion.wait] = "Wait";
+                dic[(int)anime_motion.happy] = "happy";
                 break;
             case "lion":
-                dic[(int)anime_motion.walk] = "";
-                dic[(int)anime_motion.wait] = "";
-                dic[(int)anime_motion.happy] = "";
+                dic[(int)anime_motion.walk] = "Walk.001";
+                dic[(int)anime_motion.wait] = "Wait";
+                dic[(int)anime_motion.happy] = "happy";
                 break;
         }
         return dic;
