@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2500767773067376935}
   - component: {fileID: 2500767773067376932}
   - component: {fileID: 2500767773067376933}
+  - component: {fileID: 8940943230888594602}
   m_Layer: 0
   m_Name: Animal2
   m_TagString: rabbit
@@ -90,6 +91,24 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
+--- !u!111 &8940943230888594602
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500767773067376922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400010, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
+  - {fileID: 7400008, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
+  - {fileID: 7400006, guid: 684ac522d2982c145b27b8e74526e8b4, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2782138723020232497
 GameObject:
   m_ObjectHideFlags: 0

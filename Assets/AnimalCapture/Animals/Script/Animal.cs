@@ -39,11 +39,50 @@ public class Animal : MonoBehaviour
         moveStopTime
     }
 
+    private Animation anime;
+    private Dictionary<int, string> anime_dic = new Dictionary<int, string>();
+    enum anime_motion {
+        walk,
+        wait,
+        happy,
+    }
+
+    private Dictionary<int, string> AnimeTable(){
+        Dictionary<int, string> dic = new Dictionary<int, string>();
+        switch (this.gameObject.tag)
+        {
+            case "squirrel":
+                dic[(int)anime_motion.walk] = "metaring|squirrel_walk";
+                dic[(int)anime_motion.wait] = "metaring|squirrel_waiting";
+                dic[(int)anime_motion.happy] = "metaring|squirrel_happy";
+                break;
+            case "cat":
+                dic[(int)anime_motion.walk] = "Armature|walk";
+                dic[(int)anime_motion.wait] = "Armature|wait";
+                dic[(int)anime_motion.happy] = "Armature|wait";
+                break;
+            case "rabbit":
+                dic[(int)anime_motion.walk] = "アーマチュア|Walk";
+                dic[(int)anime_motion.wait] = "アーマチュア|Wait";
+                dic[(int)anime_motion.happy] = "アーマチュア|happy";
+                break;
+            case "lion":
+                dic[(int)anime_motion.walk] = "";
+                dic[(int)anime_motion.wait] = "";
+                dic[(int)anime_motion.happy] = "";
+                break;
+        }
+        return dic;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         //動物ごとにステータス設定
         StatusInit();
+
+        anime = this.gameObject.GetComponent<Animation>();
+        anime_dic = AnimeTable();
     }
 
     // Update is called once per frame
@@ -132,6 +171,8 @@ public class Animal : MonoBehaviour
                 rotateY += Time.deltaTime * -90.0f / moveStopTime;
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
+
+            anime.Play(anime_dic[(int)anime_motion.walk]);
         }
         else
         {
@@ -142,6 +183,8 @@ public class Animal : MonoBehaviour
                 gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
+
+            anime.Play(anime_dic[(int)anime_motion.wait]);
         }
 
     }
@@ -181,6 +224,7 @@ public class Animal : MonoBehaviour
     {
         if (isHungry)
         {
+            anime.Play(anime_dic[(int)anime_motion.happy]);
             isHungry = false;
             ResultUIManager.Score++;
         }

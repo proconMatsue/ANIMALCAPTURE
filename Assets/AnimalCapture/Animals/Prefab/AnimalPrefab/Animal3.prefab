@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2441329405239276316}
   - component: {fileID: 5779133472345621553}
   - component: {fileID: 842234800778965551}
+  - component: {fileID: 2392726280507509352}
   m_Layer: 0
   m_Name: Animal3
   m_TagString: lion
@@ -90,6 +91,24 @@ MonoBehaviour:
   moveStopTime: 3
   eatDistance: 3
   isHungry: 0
+--- !u!111 &2392726280507509352
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331621269192344812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400004, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
+  - {fileID: 7400002, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
+  - {fileID: 7400000, guid: 66ecbcbaece09b5429c1179e36828dbc, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7429871995357500196
 GameObject:
   m_ObjectHideFlags: 0
