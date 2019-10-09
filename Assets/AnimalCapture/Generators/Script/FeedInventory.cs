@@ -49,8 +49,7 @@ public class FeedInventory : MonoBehaviour
     //[SerializeField] private float intervalTime;
 
     //所持している餌の数(key: 餌の種類, value: 餌の数)
-    private Dictionary<Feeding, int> FeedDictionary = new Dictionary<Feeding, int>();
-
+    private Dictionary<Feeding, int> feedDictionary = new Dictionary<Feeding, int>();
     //SEを鳴らすため
     private GameObject FeedingSE;
 
@@ -67,7 +66,7 @@ public class FeedInventory : MonoBehaviour
         for (int i = 0; i < MaxNumberFeed; i++)
         {
             feedingType = GenerateRandamFeeding();
-            FeedDictionary[feedingType]++;
+            feedDictionary[feedingType]++;
         }
 
         //スクリプトを呼び出すためにFeedingSEオブジェクトを取得
@@ -80,10 +79,10 @@ public class FeedInventory : MonoBehaviour
     private void FeedInventoryInit()
     {
         //所有している餌を初期化
-        FeedDictionary.Add(Feeding.Acorn, 0);
-        FeedDictionary.Add(Feeding.Carrot, 0);
-        FeedDictionary.Add(Feeding.Meat, 0);
-        FeedDictionary.Add(Feeding.Pike, 0);
+        feedDictionary.Add(Feeding.Acorn, 0);
+        feedDictionary.Add(Feeding.Carrot, 0);
+        feedDictionary.Add(Feeding.Meat, 0);
+        feedDictionary.Add(Feeding.Pike, 0);
     }
 
     /// <summary>
@@ -94,8 +93,8 @@ public class FeedInventory : MonoBehaviour
     {
         // オブジェクトからTextコンポーネントを取得
         Text text = textObject.GetComponent<Text>();
-        text.text = "どんぐり : " + FeedDictionary[Feeding.Acorn] + " " + "さんま : " + FeedDictionary[Feeding.Pike] + " \n"
-                + "ニンジン : " + FeedDictionary[Feeding.Carrot] + " " + "肉 : " + FeedDictionary[Feeding.Meat] + " ";
+        text.text = "どんぐり : " + feedDictionary[Feeding.Acorn] + " " + "さんま : " + feedDictionary[Feeding.Pike] + " \n"
+                + "ニンジン : " + feedDictionary[Feeding.Carrot] + " " + "肉 : " + feedDictionary[Feeding.Meat] + " ";
     }
 
     /// <summary>
@@ -120,7 +119,7 @@ public class FeedInventory : MonoBehaviour
         Debug.Log("animalFeed : " + animalFeed);
         // Debug.Log(GazeManager.Instance.HitObject.GetComponent<Animal>().isHungry);
         if (GazeManager.Instance.HitObject.GetComponent<Animal>().isHungry) {
-            if (FeedDictionary[animalFeed] <= 0)
+            if (feedDictionary[animalFeed] <= 0)
             {
                 //餌を持ってかったときの処理を書く
             }
@@ -147,7 +146,7 @@ public class FeedInventory : MonoBehaviour
                 {
                     feedInstance.tag = "meat";
                 }
-                FeedDictionary[animalFeed]--;
+                feedDictionary[animalFeed]--;
 
                 feedInstance.GetComponent<Rigidbody>().AddForce(feedInstance.transform.forward * speed);
 
@@ -191,9 +190,21 @@ public class FeedInventory : MonoBehaviour
         }
     }
 
+    public int GetFeedNum(string s)
+    {
+        switch (s)
+        {
+            case "carrot":  return feedDictionary[Feeding.Carrot];
+            case "pike":    return feedDictionary[Feeding.Pike];
+            case "meat":    return feedDictionary[Feeding.Meat];
+            case "acorn":   return feedDictionary[Feeding.Acorn];
+            default:        Debug.LogError("ERROR : Unexpected reciev in GetFeeding"); return 256;
+        }
+    }
+
     public void IncreaseFeed()//餌boxを拾ったときに持っている餌を増やす関数
     {
-        FeedDictionary[GenerateRandamFeeding()]++;
+        feedDictionary[GenerateRandamFeeding()]++;
     }
 
 
