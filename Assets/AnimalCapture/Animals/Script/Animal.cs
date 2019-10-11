@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    public GameObject animalObject;
-    public GameObject angerObject;
+    [SerializeField, Tooltip("動物のオブジェクト_通常モード")] private GameObject animalPrefab_normal;
+    [SerializeField, Tooltip("動物のオブジェクト_怒りモード")] private GameObject animalPrefab_anger;
+
+    //動物オブジェクトを格納しておく変数
+    private GameObject animalObject_normal;
+    private GameObject animalObject_anger;
+
     public int animaltype = 0;          //動物の種類
     public float point = 5;             //エサを与えたときのポイント?
     public float hungryRate = 20;       //空腹になる確率
@@ -16,7 +21,7 @@ public class Animal : MonoBehaviour
     public float moveStopTime = 3.0f;   //方向を変えてから動き出すまでの時間
     public float eatDistance = 3.0f;    //エサを与えられるプレイヤーとの距離?
     int maxAnimalType = 4;              //動物の種類の最大数
-    public bool isHungry = false;              //おなかがすいているか
+    public bool isHungry = false;      //おなかがすいているか
     float preCheckTime = 0;             //前回方向変更をした時間
     float stopCounts = 0;               //停止してからの時間
     float preHungryCheckTime = 0;       //前回空腹チェックをした時間
@@ -39,64 +44,55 @@ public class Animal : MonoBehaviour
         moveStopTime
     }
 
-    private Animation anime;
-    private Dictionary<int, string> anime_dic = new Dictionary<int, string>();
-    enum anime_motion {
-        walk,
-        wait,
-        happy,
+    //動物の状態
+    enum state{
+        normal, // 通常
+        anger,  // 怒り
     }
 
-    private Dictionary<int, string> AnimeTable(){
-        Dictionary<int, string> dic = new Dictionary<int, string>();
-        switch (this.gameObject.tag)
-        {
-            case "squirrel":
-                dic[(int)anime_motion.walk] = "squirrel_walk";
-                dic[(int)anime_motion.wait] = "squirrel_waiting.001";
-                dic[(int)anime_motion.happy] = "squirrel_happy.001";
-                break;
-            case "cat":
-                dic[(int)anime_motion.walk] = "walk";
-                dic[(int)anime_motion.wait] = "wait";
-                dic[(int)anime_motion.happy] = "happy.001";
-                break;
-            case "rabbit":
-                dic[(int)anime_motion.walk] = "Walk.001";
-                dic[(int)anime_motion.wait] = "Wait";
-                dic[(int)anime_motion.happy] = "happy";
-                break;
-            case "lion":
-                dic[(int)anime_motion.walk] = "Walk.001";
-                dic[(int)anime_motion.wait] = "Wait";
-                dic[(int)anime_motion.happy] = "happy";
-                break;
-        }
-        return dic;
-    }
+    //動物のアニメーション
+    private Animator animator;
+
+    //幸せアニメーションを再生するために使用する
+    private bool isHappyTrigger;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         //動物ごとにステータス設定
         StatusInit();
 
-        anime = this.gameObject.GetComponent<Animation>();
-        anime_dic = AnimeTable();
+        //動物オブジェクトを生成
+        //for文によって怒り, 通常のオブジェクトを生成
+
+        animalObject_normal = Instantiate<GameObject>(
+            animalPrefab_normal,
+            this.gameObject.transform
+            );
+        animalObject_normal.transform.parent = this.gameObject.transform;
+
+        animalObject_anger = Instantiate<GameObject>(
+            animalPrefab_anger,
+            this.gameObject.transform
+            );
+        animalObject_anger.transform.parent = this.gameObject.transform;
+
+        //アクティブ状態を初期設定
+        animalObject_normal.SetActive(true);
+        animalObject_anger.SetActive(false);
+
+        isHappyTrigger = false;
+
+        //子オブジェクトのanimetorスクリプトを取得
+        animator = animalObject_normal.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //Debug.Log(isHungry);
-        Move();
-        if (MeasureDistance() < eatDistance)
-        {
-            //頭の上に三角表示
-            DisplayTriangle();
-        }
         HungryCheck();
-
+        Move();
     }
 
     void StatusInit()
@@ -111,85 +107,68 @@ public class Animal : MonoBehaviour
             maxSpeed = data[animaltype][(int)parameter.maxSpeed];               //最高速度
             moveStopTime = data[animaltype][(int)parameter.moveStopTime];       //動き出すまでの時間
         }
-        isHungry = false;           //おなかがすいているか
+        isHungry = false;           //通常状態からスタートさせる
         preCheckTime = Time.time + Random.Range(-0.5f, 0.5f);//方向転換のタイミングにばらつきを作る
-        if (animaltype == (int)AnimalManager.Animals.Squirrel) {
-            this.gameObject.tag = "squirrel";
-        }
-        if (animaltype == (int)AnimalManager.Animals.Cat)
-        {
-            this.gameObject.tag = "cat";
-        }
-        if (animaltype == (int)AnimalManager.Animals.Rabbit)
-        {
-            this.gameObject.tag = "rabbit";
-        }
-        if (animaltype == (int)AnimalManager.Animals.Lion)
-        {
-            this.gameObject.tag = "lion";
-        }
     }
 
-    //動物の移動
+    //回転の種類
+    enum turn
+    {
+        straight,   //直進(無回転)
+        half,       //180度
+        right,      //右90度
+        left,       //左90度
+    }
+
+    /// <summary>
+    /// 方向と時間を決定
+    /// 歩きアニメーションの制御
+    /// </summary>
     void Move()
     {
 
         if (Time.time - preCheckTime > checkTime || preCheckTime == 0)
         {
-            //方向を変える
-            /*
-             * 方向を変えるなら進行方向よりもrotateをいじって回転させるべきか
-             */
-            //Debug.Log(Time.time);
             direction = Random.Range(0, 4);
-            if (stopCounts == 0)
-            {
-                stopCounts = Time.time;
-            }
+            if (stopCounts == 0){ stopCounts = Time.time; }
             preCheckTime = Time.time + Random.Range(-0.5f, 0.5f);//方向転換のタイミングにばらつきを作る
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
 
         if (Time.time - stopCounts < moveStopTime)
         {
-            //Debug.Log(direction);
-            //Debug.Log(Time.deltaTime);
-            if (direction == 0)
+            //方向の決定
+            switch ((turn)direction)
             {
+                case turn.straight: break;                                                  //直進
+                case turn.half: rotateY += Time.deltaTime * 180.0f / moveStopTime; break;   //半回転
+                case turn.right: rotateY += Time.deltaTime * 90.0f / moveStopTime; break;   //右90度回転
+                case turn.left: rotateY += Time.deltaTime * -90.0f / moveStopTime; break;   //左90度回転
+            } transform.rotation = Quaternion.Euler(0, rotateY, 0);
 
-            }
-            else if (direction == 1)
-            {
-                rotateY += Time.deltaTime * 180.0f / moveStopTime;
-            }
-            else if (direction == 2)
-            {
-                rotateY += Time.deltaTime * 90.0f / moveStopTime;
-            }
-            else if (direction == 3)
-            {
-                rotateY += Time.deltaTime * -90.0f / moveStopTime;
-            }
-            transform.rotation = Quaternion.Euler(0, rotateY, 0);
-
-            anime.Play(anime_dic[(int)anime_motion.walk]);
+            //歩きのアニメーションを実装
+            //if (isHungry) { animator[(int)state.anger].SetBool("isWalk", false); }
+            animator.SetBool("isWalk", false);
         }
         else
         {
             stopCounts = 0;
             if (Mathf.Sqrt(Mathf.Pow(gameObject.GetComponent<Rigidbody>().velocity.x, 2) + Mathf.Pow(gameObject.GetComponent<Rigidbody>().velocity.z, 2)) < maxSpeed)
-            {
-                //gameObject.GetComponent<Rigidbody>().AddForce(moveForce);
+            { 
                 gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
 
-            anime.Play(anime_dic[(int)anime_motion.wait]);
+            //if (isHungry) { animator[(int)state.anger].SetBool("isWalk", true); }
+            animator.SetBool("isWalk", true);
         }
 
     }
 
-    //おなかがすいたかのチェック（checkTimeの周期）
+    /// <summary>
+    /// 動物の状態を変化させる( 常に呼ばれる )
+    /// ランダムに怒り状態に変化させる
+    /// </summary>
     void HungryCheck()
     {
         if (Time.time - preHungryCheckTime > checkHungryTime)
@@ -209,61 +188,44 @@ public class Animal : MonoBehaviour
         }
         if (isHungry)
         {
-            animalObject.SetActive(false);
-            angerObject.SetActive(true);
+            animalObject_normal.SetActive(false);
+            animalObject_anger.SetActive(true);
         }
         else
         {
-            animalObject.SetActive(true);
-            angerObject.SetActive(false);
+            animalObject_normal.SetActive(true);
+            animalObject_anger.SetActive(false);
+            if (isHappyTrigger) { animator.SetTrigger("isHappy"); isHappyTrigger = false; }
         }
     }
-
-    //エサを食べる（得点の獲得とisHungryをfalse）
+    
+    /// <summary>
+    /// エサを食べる
+    /// </summary>
     public void Eat()
     {
-        if (isHungry)
-        {
-            anime.Play(anime_dic[(int)anime_motion.happy]);
-            isHungry = false;
-            ResultUIManager.Score++;
-        }
+        isHungry = false;           //通常状態に戻す
+        isHappyTrigger = true;      //幸せアニメーションを再生
+        ResultUIManager.Score++;    //スコアを加算する
     }
 
-    //時間切れのとき動物の削除
-    void Delete()
-    {
-
-    }
-
-    //プレイヤーと動物の距離を測る
-    float MeasureDistance()
-    {
-        return 100.0f;
-    }
-
-    //頭の上に三角を表示
-    void DisplayTriangle()
-    {
-
-    }
 
     /// <summary>
     /// 餌と動物が触れたら消滅させる
+    /// エサを食べる処理を実装
     /// </summary>
     /// <param name="collision">特に気にする必要はない</param>
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collision.gameObject.tag : " + collision.gameObject.tag);
-        var mytag = this.gameObject.tag;
-        var colltag = collision.gameObject.tag;
+        string mytag = this.gameObject.tag;
+        string colltag = collision.gameObject.tag;
 
         if (
             (mytag == "cat" && colltag == "pike") ||
             (mytag == "squirrel" && colltag == "acorn") ||
             (mytag == "lion" && colltag == "meat") ||
             (mytag == "rabbit" && colltag == "carrot")
-            )
+           )
         {
             Destroy(collision.gameObject);
             Eat();
