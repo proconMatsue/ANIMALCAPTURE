@@ -52,6 +52,7 @@ public class Animal : MonoBehaviour
 
     //動物のアニメーション
     private Animator animator;
+    private Animator animator_anger;
 
     //幸せアニメーションを再生するために使用する
     private bool isHappyTrigger;
@@ -85,7 +86,7 @@ public class Animal : MonoBehaviour
 
         //子オブジェクトのanimetorスクリプトを取得
         animator = animalObject_normal.GetComponent<Animator>();
-        
+        animator_anger = animalObject_anger.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -147,8 +148,8 @@ public class Animal : MonoBehaviour
             } transform.rotation = Quaternion.Euler(0, rotateY, 0);
 
             //歩きのアニメーションを実装
-            //if (isHungry) { animator[(int)state.anger].SetBool("isWalk", false); }
             animator.SetBool("isWalk", false);
+            animator_anger.SetBool("isWalk", false);
         }
         else
         {
@@ -161,6 +162,7 @@ public class Animal : MonoBehaviour
 
             //if (isHungry) { animator[(int)state.anger].SetBool("isWalk", true); }
             animator.SetBool("isWalk", true);
+            animator_anger.SetBool("isWalk", true);
         }
 
     }
