@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: bf25bc9dbbc215b4da49611fd7648124
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: donguri
+    100002: niku
+    100004: ninjin
+    100006: sanma
+    100008: //RootNode
+    100010: "\u30C6\u30AD\u30B9\u30C8"
+    100012: "\u30C6\u30AD\u30B9\u30C8.001"
+    100014: "\u30C6\u30AD\u30B9\u30C8.002"
+    100016: "\u30C6\u30AD\u30B9\u30C8.003"
+    100018: "\u30C6\u30AD\u30B9\u30C8.004"
+    100020: "\u30C6\u30AD\u30B9\u30C8.005"
+    100022: "\u5E73\u9762"
+    400000: donguri
+    400002: niku
+    400004: ninjin
+    400006: sanma
+    400008: //RootNode
+    400010: "\u30C6\u30AD\u30B9\u30C8"
+    400012: "\u30C6\u30AD\u30B9\u30C8.001"
+    400014: "\u30C6\u30AD\u30B9\u30C8.002"
+    400016: "\u30C6\u30AD\u30B9\u30C8.003"
+    400018: "\u30C6\u30AD\u30B9\u30C8.004"
+    400020: "\u30C6\u30AD\u30B9\u30C8.005"
+    400022: "\u5E73\u9762"
+    2100000: note
+    2100002: text2
+    2100004: Material.005
+    2100006: Material.003
+    2100008: Material.001
+    2100010: Material.002
+    2100012: niku
+    2100014: niku.001
+    2100016: bone
+    2100018: donguri_body
+    2100020: donguri_head
+    2100022: hontai
+    2100024: happa
+    2100026: text
+    2300000: donguri
+    2300002: niku
+    2300004: ninjin
+    2300006: sanma
+    2300008: "\u30C6\u30AD\u30B9\u30C8"
+    2300010: "\u30C6\u30AD\u30B9\u30C8.001"
+    2300012: "\u30C6\u30AD\u30B9\u30C8.002"
+    2300014: "\u30C6\u30AD\u30B9\u30C8.003"
+    2300016: "\u30C6\u30AD\u30B9\u30C8.004"
+    2300018: "\u30C6\u30AD\u30B9\u30C8.005"
+    2300020: "\u5E73\u9762"
+    3300000: donguri
+    3300002: niku
+    3300004: ninjin
+    3300006: sanma
+    3300008: "\u30C6\u30AD\u30B9\u30C8"
+    3300010: "\u30C6\u30AD\u30B9\u30C8.001"
+    3300012: "\u30C6\u30AD\u30B9\u30C8.002"
+    3300014: "\u30C6\u30AD\u30B9\u30C8.003"
+    3300016: "\u30C6\u30AD\u30B9\u30C8.004"
+    3300018: "\u30C6\u30AD\u30B9\u30C8.005"
+    3300020: "\u5E73\u9762"
+    4300000: "\u5E73\u9762"
+    4300002: "\u30C6\u30AD\u30B9\u30C8.005"
+    4300004: sanma
+    4300006: niku
+    4300008: donguri
+    4300010: ninjin
+    4300012: "\u30C6\u30AD\u30B9\u30C8.004"
+    4300014: "\u30C6\u30AD\u30B9\u30C8.003"
+    4300016: "\u30C6\u30AD\u30B9\u30C8.002"
+    4300018: "\u30C6\u30AD\u30B9\u30C8.001"
+    4300020: "\u30C6\u30AD\u30B9\u30C8"
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
