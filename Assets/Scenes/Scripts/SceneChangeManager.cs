@@ -61,10 +61,10 @@ public class SceneChangeManager : MonoBehaviour
         {
             Destroy(InputManager);
         }
-        if (SpatialMapping != null)
+        /*if (SpatialMapping != null)
         {
             Destroy(SpatialMapping);
-        }
+        }*/
 
         SceneManager.LoadScene(NextScene);
         //gazeCircle.SetActive(false);
@@ -87,10 +87,10 @@ public class SceneChangeManager : MonoBehaviour
             {
                 Destroy(InputManager);
             }
-            if (SpatialMapping != null)
+            /*if (SpatialMapping != null)
             {
                 Destroy(SpatialMapping);
-            }
+            }*/
             SceneManager.LoadScene(NextScene);
             //gazeCircle.SetActive(false);
         }

@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    [SerializeField, Tooltip("動物のオブジェクト_通常モード")] private GameObject animalPrefab_normal;
-    [SerializeField, Tooltip("動物のオブジェクト_怒りモード")] private GameObject animalPrefab_anger;
-
     //動物オブジェクトを格納しておく変数
     private GameObject animalObject_normal;
     private GameObject animalObject_anger;
 
-    public int animaltype = 0;          //動物の種類
-    public float point = 5;             //エサを与えたときのポイント?
-    public float hungryRate = 20;       //空腹になる確率
-    public float checkHungryTime = 30.0f;//空腹になるかの確認のタイミング
-    public float checkTime = 3.0f;     //方向転換のタイミング(前回の方向決定をした時間からcheckTime秒なので，実際に進むのは(checkTime-moveStopTime)秒の間になる
-    public float moveSpeed = 5.0f;      //移動速度
-    public float maxSpeed = 30.0f;      //最高速度
-    public float moveStopTime = 3.0f;   //方向を変えてから動き出すまでの時間
-    public float eatDistance = 3.0f;    //エサを与えられるプレイヤーとの距離?
-    int maxAnimalType = 4;              //動物の種類の最大数
-    public bool isHungry = false;      //おなかがすいているか
-    float preCheckTime = 0;             //前回方向変更をした時間
-    float stopCounts = 0;               //停止してからの時間
-    float preHungryCheckTime = 0;       //前回空腹チェックをした時間
-    float rotateY = 0;
-    int direction = 0;                  //動物の向き
+    [SerializeField, Tooltip("動物の種類")] public int animaltype = 0;
+    [SerializeField, Tooltip("エサを与えたときのポイント")]
+    [Range(0, 5)]
+    public float point = 5;
+    [SerializeField, Tooltip("空腹になる確率")] public float hungryRate = 20;
+    [SerializeField, Tooltip("空腹になるかの確認のタイミング")] public float checkHungryTime = 30.0f;
+    [SerializeField, Tooltip("方向転換のタイミング\n(前回の方向決定をした時間からcheckTime秒なので，実際に進むのは(checkTime-moveStopTime)秒の間になる")]
+    public float checkTime = 3.0f;
+    [SerializeField, Tooltip("移動速度")] public float moveSpeed = 5.0f;
+    [SerializeField, Tooltip("最高速度")] public float maxSpeed = 30.0f;
+    [SerializeField, Tooltip("方向を変えてから動き出すまでの時間")] public float moveStopTime = 3.0f;
+    [SerializeField, Tooltip("エサを与えられるプレイヤーとの距離?")] public float eatDistance = 3.0f;
+    [SerializeField, Tooltip("動物の種類の最大数")] private int maxAnimalType = 4;
+    [HideInInspector] public bool isHungry = false;      //おなかがすいているか
+    private float preCheckTime = 0;             //前回方向変更をした時間
+    private float stopCounts = 0;               //停止してからの時間
+    private float preHungryCheckTime = 0;       //前回空腹チェックをした時間
+    private float rotateY = 0;
+    private int direction = 0;                  //動物の向き
     //  key:animaltype values:{point, hungryRate, checkHungryTime, checkTime, moveSpeed, maxSpeed, moveStopTime}
     //  animalType 0:リス 1:猫 2:ウサギ 3:ライオン
-    Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 6.0f, 4.5f, 8.0f, 1.5f, 3.5f}},
+    private Dictionary<int, List<float>> data = new Dictionary<int, List<float>>(){ { 0, new List<float> { 5, 50, 6.0f, 4.5f, 8.0f, 1.5f, 3.5f}},
                                                                             { 1, new List<float> { 5, 50, 6.0f, 5.0f, 15.0f, 1.5f, 3.5f}},
                                                                             { 2, new List<float> { 5, 50, 6.0f, 5.5f, 8.0f, 1.5f, 3.5f}},
                                                                             { 3, new List<float> { 5, 50, 6.0f, 6.0f, 15.0f, 1.5f, 3.5f}}};
@@ -51,7 +51,7 @@ public class Animal : MonoBehaviour
     }
 
     //動物のアニメーション
-    private Animator animator;
+    private Animator animator_normal;
     private Animator animator_anger;
 
     //幸せアニメーションを再生するために使用する
@@ -63,20 +63,10 @@ public class Animal : MonoBehaviour
         //動物ごとにステータス設定
         StatusInit();
 
-        //動物オブジェクトを生成
-        //for文によって怒り, 通常のオブジェクトを生成
-
-        animalObject_normal = Instantiate<GameObject>(
-            animalPrefab_normal,
-            this.gameObject.transform
-            );
-        animalObject_normal.transform.parent = this.gameObject.transform;
-
-        animalObject_anger = Instantiate<GameObject>(
-            animalPrefab_anger,
-            this.gameObject.transform
-            );
-        animalObject_anger.transform.parent = this.gameObject.transform;
+        //このスクリプトがアタッチされているオブジェクトの子オブジェクトを取得している
+        //なお, 参照方法は上から順に0から数えていく.
+        animalObject_normal = this.gameObject.transform.GetChild((int)state.normal).gameObject;
+        animalObject_anger = this.gameObject.transform.GetChild((int)state.anger).gameObject;
 
         //アクティブ状態を初期設定
         animalObject_normal.SetActive(true);
@@ -85,7 +75,7 @@ public class Animal : MonoBehaviour
         isHappyTrigger = false;
 
         //子オブジェクトのanimetorスクリプトを取得
-        animator = animalObject_normal.GetComponent<Animator>();
+        animator_normal = animalObject_normal.GetComponent<Animator>();
         animator_anger = animalObject_anger.GetComponent<Animator>();
     }
 
@@ -148,21 +138,20 @@ public class Animal : MonoBehaviour
             } transform.rotation = Quaternion.Euler(0, rotateY, 0);
 
             //歩きのアニメーションを実装
-            animator.SetBool("isWalk", false);
-            animator_anger.SetBool("isWalk", false);
+            if (!isHungry) { animator_normal.SetBool("isWalk", false); }
+            else { animator_anger.SetBool("isWalk", false); }
         }
         else
         {
             stopCounts = 0;
             if (Mathf.Sqrt(Mathf.Pow(gameObject.GetComponent<Rigidbody>().velocity.x, 2) + Mathf.Pow(gameObject.GetComponent<Rigidbody>().velocity.z, 2)) < maxSpeed)
             { 
-                gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
+                this.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
 
-            //if (isHungry) { animator[(int)state.anger].SetBool("isWalk", true); }
-            animator.SetBool("isWalk", true);
-            animator_anger.SetBool("isWalk", true);
+            if (!isHungry) { animator_normal.SetBool("isWalk", true); }
+            else { animator_anger.SetBool("isWalk", true); }
         }
 
     }
@@ -178,27 +167,30 @@ public class Animal : MonoBehaviour
             preHungryCheckTime = Time.time;
             if (isHungry == false)
             {
-                if (Random.Range(0, 100) < hungryRate)   //ランダムでおなかがすいた状態にする
-                {
-                    isHungry = true;
-                }
-                else
-                {
-                    isHungry = false;
-                }
+                //ランダムでおなかがすいた状態にする
+                if (Random.Range(0, 100) < hungryRate){ isHungry = true; }
+                else{ isHungry = false; }
             }
         }
         if (isHungry)
         {
-            animalObject_normal.SetActive(false);
-            animalObject_anger.SetActive(true);
+            StateNormalAnimal(false);
         }
         else
         {
-            animalObject_normal.SetActive(true);
-            animalObject_anger.SetActive(false);
-            if (isHappyTrigger) { animator.SetTrigger("isHappy"); isHappyTrigger = false; }
+            StateNormalAnimal(true);
+            if (isHappyTrigger) { animator_normal.SetTrigger("isHappy"); isHappyTrigger = false; }
         }
+    }
+
+    /// <summary>
+    /// 動物オブジェクトの通常状態を表示させるか, させないかを操作する関数
+    /// </summary>
+    /// <param name="s"> true: 通常状態を表示, false: 怒り状態を表示 </param>
+    private void StateNormalAnimal(bool s)
+    {
+        animalObject_normal.SetActive(s);
+        animalObject_anger.SetActive(!s);
     }
     
     /// <summary>

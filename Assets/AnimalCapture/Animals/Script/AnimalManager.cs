@@ -7,13 +7,10 @@ using UnityEngine;
 /// </summary>
 class animals
 {
+    //動物オブジェクトを格納する変数
     private GameObject animalObject;
-    //private float angerTime;
-    //private bool isAnger;
-
+    //プロパティ
     public GameObject AnimalObject { set; get; }
-    //public float AngerTime { get; set; }
-    //public bool IsAangry { set; get; }
 }
 
 public class AnimalManager : MonoBehaviour
@@ -29,16 +26,10 @@ public class AnimalManager : MonoBehaviour
     }
 
     //ノーマル状態の動物オブジェクトのプレハブ
-    [SerializeField, Tooltip("ノーマル状態のリスのプレハブ")] private GameObject squirrelPrefab_normal;
-    [SerializeField, Tooltip("ノーマル状態のネコのプレハブ")] private GameObject catPrefab_normal;
-    [SerializeField, Tooltip("ノーマル状態のウサギのプレハブ")] private GameObject rabbitPrefab_normal;
-    [SerializeField, Tooltip("ノーマル状態のライオンのプレハブ")] private GameObject lionPrefab_normal;
-
-    //怒り状態の動物オブジェクトのプレハブ
-    /*[SerializeField, Tooltip("怒り状態のリスのプレハブ")] private GameObject squirrelPrefab_angry;
-    [SerializeField, Tooltip("怒り状態のネコのプレハブ")] private GameObject catPrefab_angry;
-    [SerializeField, Tooltip("怒り状態のウサギのプレハブ")] private GameObject rabbitPrefab_angry;
-    [SerializeField, Tooltip("怒り状態のライオンのプレハブ")] private GameObject lionPrefab_angry;*/
+    [SerializeField, Tooltip("リスのプレハブ")] private GameObject squirrelPrefab_normal;
+    [SerializeField, Tooltip("ネコのプレハブ")] private GameObject catPrefab_normal;
+    [SerializeField, Tooltip("ウサギのプレハブ")] private GameObject rabbitPrefab_normal;
+    [SerializeField, Tooltip("ライオンのプレハブ")] private GameObject lionPrefab_normal;
 
     //存在できる動物の数の上限
     [SerializeField, Tooltip("フィールド上に存在できる動物の数")]
@@ -107,8 +98,6 @@ public class AnimalManager : MonoBehaviour
 
         //動物オブジェクトの大きさを動的に変更
         a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
-        //a.AngerTime = Random.Range(10.0f, 60.0f);
-        //a.IsAangry = false;
 
         //リストに格納しておく
         Animal.Add(a);
@@ -135,22 +124,10 @@ public class AnimalManager : MonoBehaviour
     {
         switch (animals)
         {
-            case Animals.Squirrel:
-                return squirrelPrefab_normal;
-            //if (isAngry) { return squirrelPrefab_normal; }
-            //else { return squirrelPrefab_angry; }
-            case Animals.Cat:
-                return catPrefab_normal;
-            //if (isAngry) { return catPrefab_normal; }
-            //else { return catPrefab_angry; }
-            case Animals.Rabbit:
-                return rabbitPrefab_normal;
-            //if (isAngry) { return rabbitPrefab_normal; }
-            //else { return rabbitPrefab_angry; }
-            case Animals.Lion:
-                return lionPrefab_normal;
-            //if (isAngry) { return lionPrefab_normal; }
-            //else { return lionPrefab_angry; }
+            case Animals.Squirrel:  return squirrelPrefab_normal;
+            case Animals.Cat:       return catPrefab_normal;
+            case Animals.Rabbit:    return rabbitPrefab_normal;
+            case Animals.Lion:      return lionPrefab_normal;
             default: Debug.LogWarning("unexpected return."); return null;
         }
     }

@@ -21,6 +21,6 @@ public class ResultUIManager : MonoBehaviour
     private void Start()
     {
         Text text = textObject.GetComponent<Text>();
-        text.text = "あなたの結果 : " + Score;
+        text.text = "Score: " + Score;
     }
 }
