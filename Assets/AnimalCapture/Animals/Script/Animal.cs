@@ -39,11 +39,21 @@ public class Animal : MonoBehaviour
         moveStopTime
     }
 
+    Animator animator_normal;
+    Animator animator_anger;
+    bool isHappyTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
         //動物ごとにステータス設定
         StatusInit();
+
+        animalObject = this.gameObject.transform.GetChild(0).gameObject;
+        angerObject = this.gameObject.transform.GetChild(1).gameObject;
+
+        animator_normal = animalObject.GetComponent<Animator>();
+        animator_anger = angerObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -132,6 +142,9 @@ public class Animal : MonoBehaviour
                 rotateY += Time.deltaTime * -90.0f / moveStopTime;
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
+
+            if (!isHungry) { animator_normal.SetBool("isWalk", false); }
+            else { animator_anger.SetBool("isWalk", false); }
         }
         else
         {
@@ -142,6 +155,9 @@ public class Animal : MonoBehaviour
                 gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
             }
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
+
+            if (!isHungry) { animator_normal.SetBool("isWalk", true); }
+            else { animator_anger.SetBool("isWalk", true); }
         }
 
     }
@@ -173,6 +189,8 @@ public class Animal : MonoBehaviour
         {
             animalObject.SetActive(true);
             angerObject.SetActive(false);
+
+            if (isHappyTrigger) { animator_normal.SetTrigger("isHappy"); isHappyTrigger = false; }
         }
     }
 
@@ -183,6 +201,7 @@ public class Animal : MonoBehaviour
         {
             isHungry = false;
             ResultUIManager.Score++;
+            isHappyTrigger = true;
         }
     }
 

@@ -3216,6 +3216,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FeedManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4662516305984767626, guid: 40b8464970acb2d4e874980c6f55cd10,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0986
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662516305984767626, guid: 40b8464970acb2d4e874980c6f55cd10,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 67.5584
+      objectReference: {fileID: 0}
     - target: {fileID: 4662516307601574991, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
       propertyPath: cameraPrefab
@@ -3316,16 +3326,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662516305984767626, guid: 40b8464970acb2d4e874980c6f55cd10,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.0986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4662516305984767626, guid: 40b8464970acb2d4e874980c6f55cd10,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 67.5584
       objectReference: {fileID: 0}
     - target: {fileID: 4662516305753856126, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
