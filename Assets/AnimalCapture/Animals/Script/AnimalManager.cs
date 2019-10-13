@@ -78,7 +78,106 @@ public class AnimalManager : MonoBehaviour
             && Animal.Count == 0)                           //フィールド上の動物の数が0体である
         {
             //最初に5匹フィールドに出す
-            for (int i = 0; i < MaxNumberAnimals; i++){ generateAnimal(); }
+            //for (int i = 0; i < MaxNumberAnimals; i++){ generateAnimal(); }
+            //アニマルクラスの変数のインスタンスを生成
+            animals a = new animals();
+
+            //オブジェクトを生成
+            //x-z座標はインスペクタで指定した範囲内でランダム
+            a.AnimalObject = Instantiate<GameObject>(
+                squirrelPrefab_normal,
+                new Vector3(
+                    Random.Range(-generatePosRange_x, generatePosRange_x),
+                    1.0f,
+                    Random.Range(-generatePosRange_z, generatePosRange_z)
+                ),
+                this.gameObject.transform.rotation);
+
+            //アニマルマネージャの子オブジェクトとする
+            a.AnimalObject.transform.parent = transform;
+
+            //動物オブジェクトの大きさを動的に変更
+            a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
+            //a.AngerTime = Random.Range(10.0f, 60.0f);
+            //a.IsAangry = false;
+
+            //リストに格納しておく
+            Animal.Add(a);
+
+            //アニマルクラスの変数のインスタンスを生成
+            a = new animals();
+
+            //オブジェクトを生成
+            //x-z座標はインスペクタで指定した範囲内でランダム
+            a.AnimalObject = Instantiate<GameObject>(
+                catPrefab_normal,
+                new Vector3(
+                    Random.Range(-generatePosRange_x, generatePosRange_x),
+                    1.0f,
+                    Random.Range(-generatePosRange_z, generatePosRange_z)
+                ),
+                this.gameObject.transform.rotation);
+
+            //アニマルマネージャの子オブジェクトとする
+            a.AnimalObject.transform.parent = transform;
+
+            //動物オブジェクトの大きさを動的に変更
+            a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
+            //a.AngerTime = Random.Range(10.0f, 60.0f);
+            //a.IsAangry = false;
+
+            //リストに格納しておく
+            Animal.Add(a);
+
+            //アニマルクラスの変数のインスタンスを生成
+            a = new animals();
+
+            //オブジェクトを生成
+            //x-z座標はインスペクタで指定した範囲内でランダム
+            a.AnimalObject = Instantiate<GameObject>(
+                lionPrefab_normal,
+                new Vector3(
+                    Random.Range(-generatePosRange_x, generatePosRange_x),
+                    1.0f,
+                    Random.Range(-generatePosRange_z, generatePosRange_z)
+                ),
+                this.gameObject.transform.rotation);
+
+            //アニマルマネージャの子オブジェクトとする
+            a.AnimalObject.transform.parent = transform;
+
+            //動物オブジェクトの大きさを動的に変更
+            a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
+            //a.AngerTime = Random.Range(10.0f, 60.0f);
+            //a.IsAangry = false;
+
+            //リストに格納しておく
+            Animal.Add(a);
+
+            //アニマルクラスの変数のインスタンスを生成
+            a = new animals();
+
+            //オブジェクトを生成
+            //x-z座標はインスペクタで指定した範囲内でランダム
+            a.AnimalObject = Instantiate<GameObject>(
+                rabbitPrefab_normal,
+                new Vector3(
+                    Random.Range(-generatePosRange_x, generatePosRange_x),
+                    1.0f,
+                    Random.Range(-generatePosRange_z, generatePosRange_z)
+                ),
+                this.gameObject.transform.rotation);
+
+            //アニマルマネージャの子オブジェクトとする
+            a.AnimalObject.transform.parent = transform;
+
+            //動物オブジェクトの大きさを動的に変更
+            a.AnimalObject.transform.localScale = new Vector3(AnimalScale, AnimalScale, AnimalScale);
+            //a.AngerTime = Random.Range(10.0f, 60.0f);
+            //a.IsAangry = false;
+
+            //リストに格納しておく
+            Animal.Add(a);
         }
     }
 
