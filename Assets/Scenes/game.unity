@@ -2918,7 +2918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 471342195}
-  second: 180
+  second: 60
   timeUpText: {fileID: 943502304}
   readyText: {fileID: 1160956616}
 --- !u!1 &1970540712
@@ -3294,12 +3294,12 @@ PrefabInstance:
     - target: {fileID: 4662516307115334509, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
       propertyPath: generatePosRange_x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4662516307115334509, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
       propertyPath: generatePosRange_z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4662516307115334509, guid: 40b8464970acb2d4e874980c6f55cd10,
         type: 3}
