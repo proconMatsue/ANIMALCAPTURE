@@ -83,8 +83,6 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
@@ -415,3 +413,6 @@ UWP/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
+
+# use Mac
+.DS_Store

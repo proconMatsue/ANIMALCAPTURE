@@ -1,6 +1,5 @@
 ﻿using HoloToolkit.Unity;
 using HoloToolkit.Unity.SpatialMapping;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

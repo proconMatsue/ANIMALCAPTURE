@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,7 +155,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Cursor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1357276743}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 3}
 --- !u!1 &111628101 stripped
@@ -777,6 +777,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c160d34bf4d2b0438b679cddad1b88d, type: 3}
+--- !u!114 &1357276743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114338812603595060, guid: b6734f59b1418a9468c3b48ba7e39a64,
+    type: 3}
+  m_PrefabInstance: {fileID: 221529970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0decd33ba8702954885a62b5bc1a778e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1505747637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,6 +887,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChangeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
+        type: 3}
+      propertyPath: NextScene
+      value: tutorial1
+      objectReference: {fileID: 0}
+    - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
+        type: 3}
+      propertyPath: sceneChangeTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 318428531019302195, guid: e94d017ae5784564f8d277756bfa8e39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -929,16 +951,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
-        type: 3}
-      propertyPath: NextScene
-      value: tutorial1
-      objectReference: {fileID: 0}
-    - target: {fileID: 318428531019302194, guid: e94d017ae5784564f8d277756bfa8e39,
-        type: 3}
-      propertyPath: sceneChangeTime
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94d017ae5784564f8d277756bfa8e39, type: 3}

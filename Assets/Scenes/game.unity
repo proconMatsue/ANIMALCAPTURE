@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1161,7 +1161,12 @@ PrefabInstance:
     - target: {fileID: 5100221793828611100, guid: 6eb68fa3c3847a244aba3aaa70ee2a0f,
         type: 3}
       propertyPath: ScanTime
-      value: 15
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368989465088296602, guid: 6eb68fa3c3847a244aba3aaa70ee2a0f,
+        type: 3}
+      propertyPath: ActivePlanes.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7368989465088296602, guid: 6eb68fa3c3847a244aba3aaa70ee2a0f,
         type: 3}
@@ -2918,6 +2923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: PhysicsLayer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012149591842, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
+        type: 3}
+      propertyPath: RoomModel
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 3}
