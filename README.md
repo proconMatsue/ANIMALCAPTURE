@@ -1,5 +1,6 @@
 # ANIMALCAPTURE
 ## 実行環境
+- Windows 10
 - Unity 2018.4.4f1
 - Hololens
 ## ゲームに必要なもの
